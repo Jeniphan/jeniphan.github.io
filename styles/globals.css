@@ -1,3 +1,125 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: Monoid;
+    src: url(/Monoid-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Monoid-Bold;
+    src: url(/Monoid-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Monoid-ltalic;
+    src: url(/Monoid-ltalic.ttf) format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Monoid';
+    margin: 0;
+}
+
+.title-text h1 {
+    font-family: 'Monoid-Bold';
+    margin-bottom: 0;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #fafafafa !important;
+}
+
+.ul {
+    margin: 0;
+    /* display: none; */
+}
+
+.ul li,
+.ul-footer li {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.switch {
+    text-align: end;
+    /* display: none; */
+}
+
+.background {
+    background-color: #04293A;
+}
+
+.header {
+    /* background: #04293A; */
+    color: #fafafa;
+}
+
+.content {
+    width: 100%;
+    margin: 1rem;
+    height: 100vh;
+}
+
+.icon-svg {
+    height: 5px;
+    width: 5px;
+}
+
+.menu {
+    display: none;
+}
+
+.footer {
+    color: #fafafafa;
+}
+
+.title-footer h1 {
+    font-family: 'Monoid-Bold';
+    padding-left: 17px;
+    color: #fafafafa;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.title-footer h2 {
+    /* font-family: 'Monoid-Bold'; */
+    color: #fafafafa;
+    font-size: 16px;
+}
+
+.credit {
+    /* border-top: 5pxpx solid red; */
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 11px;
+}
+
+.ant-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.ant-divider {
+    margin: 0 !important;
+}
+
+@media screen and (max-width:576px) {
+    .ul,
+    .switch {
+        display: none;
+    }
+    .menu {
+        display: unset;
+        text-align: end;
+    }
+    .botton-menu {
+        background: unset !important;
+        border: unset !important;
+    }
+    .icon-menu {
+        height: 100%;
+        width: auto;
+        font-size: 24px;
+        color: #fafafafa !important;
+    }
+}
