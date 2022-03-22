@@ -3,17 +3,17 @@
 @tailwind utilities;
 @font-face {
     font-family: Monoid;
-    src: url(/Monoid-Regular.ttf) format("truetype");
+    src: url(/Monoid-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: Monoid-Bold;
-    src: url(/Monoid-Bold.ttf) format("truetype");
+    src: url(/Monoid-Bold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: Monoid-ltalic;
-    src: url(/Monoid-ltalic.ttf) format("truetype");
+    src: url(/Monoid-ltalic.ttf) format('truetype');
 }
 
 * {
@@ -22,23 +22,30 @@
     margin: 0;
 }
 
+h1,
+h2 {
+    color: none;
+}
+
+.header div {
+    margin: 0px;
+}
+
+.ant-menu-horizontal {
+    border-bottom: unset !important;
+}
+
+.title {
+    color: #fafafa;
+}
+
 .title-text h1 {
+    padding-left: 10px;
     font-family: 'Monoid-Bold';
     margin-bottom: 0;
     font-size: 24px !important;
     font-weight: 600 !important;
-    color: #fafafafa !important;
-}
-
-.ul {
-    margin: 0;
-    /* display: none; */
-}
-
-.ul li,
-.ul-footer li {
-    font-weight: bolder;
-    font-size: 14px;
+    color: #fafafa !important;
 }
 
 .switch {
@@ -47,7 +54,15 @@
 }
 
 .background {
-    background-color: #04293A;
+    background-color: #041c32 !important;
+}
+
+.background_light {
+    background-color: #7868e6 !important;
+}
+
+.list-menu {
+    color: #fafafa !important;
 }
 
 .header {
@@ -57,8 +72,12 @@
 
 .content {
     width: 100%;
-    margin: 1rem;
-    height: 100vh;
+    /* margin: 1rem 0 1rem 0; */
+    /* height: 100vh; */
+}
+
+.react-reveal {
+    height: 100% !important;
 }
 
 .icon-svg {
@@ -93,6 +112,7 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
     font-size: 11px;
+    /* color: #fafafa6e; */
 }
 
 .ant-divider {
@@ -103,8 +123,40 @@
     margin: 0 !important;
 }
 
-@media screen and (max-width:576px) {
-    .ul,
+.ul-footer-icon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bg-content {
+    background-color: #04293a;
+}
+
+.bg-content-light {
+    background-color: #b8fff9;
+}
+
+
+/*-------------------------- ANIMATION_CSS-------------------------------*/
+
+.screen {
+    position: absolute;
+    /* width: 100%; */
+    z-index: 100;
+}
+
+.children {
+    position: relative;
+}
+
+.name {
+    font-family: 'Monoid-Bold';
+    color: #fafafa;
+    margin: 0;
+}
+
+@media screen and (max-width: 576px) {
+    .nav-header,
     .switch {
         display: none;
     }
@@ -121,5 +173,23 @@
         width: auto;
         font-size: 24px;
         color: #fafafafa !important;
+    }
+    .title-footer h1 {
+        text-align: center;
+        padding: 0;
+    }
+    .title-footer h2 {
+        text-align: center;
+    }
+    .ul-footer-icon {
+        display: flex;
+        justify-content: center !important;
+    }
+    .padding_in {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .twocontent {
+        padding: unset !important;
     }
 }

@@ -1,29 +1,55 @@
 import { useAppContext } from '@hooks/context';
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import Switch from "react-switch";
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
 import { Menu, Dropdown, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
+
+
 
 
 const Header: FC = () => {
 	const context = useAppContext()
 	const [check, setCheck] = React.useState(false);
+	const [page, setPage] = React.useState({ current: 'profile' })
+
+	const handleClick = e => {
+		console.log('click ', e);
+		setPage({ current: e.key });
+	};
+
+	const { current } = page;
+	const { SubMenu } = Menu;
+
+	const toggleSwitch = (checked: boolean) => {
+		setCheck(checked);
+		checked ? context.setTheme('light') : context.setTheme('dark');
+		localStorage.setItem('theme', checked ? 'light' : 'dark')
+	}
+
+	useEffect(() => {
+		if (context.theme == 'dark') {
+			setCheck(false)
+		}
+		else {
+			setCheck(true)
+		}
+	}, [context.theme])
 
 	const menu = (
-		<Menu>
-			<Menu.Item>
-				<a target="_blank" rel="noopener noreferrer" href="/">
+		<Menu className={`w-[180px]`} theme={context.theme}>
+			<Menu.Item >
+				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
 					Proflie
 				</a>
 			</Menu.Item>
 			<Menu.Item>
-				<a target="_blank" rel="noopener noreferrer" href="/">
+				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
 					Block
 				</a>
 			</Menu.Item>
 			<Menu.Item>
-				<a target="_blank" rel="noopener noreferrer" href="/">
+				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
 					Contact
 				</a>
 			</Menu.Item>
@@ -40,19 +66,15 @@ const Header: FC = () => {
 
 	);
 
-	const toggleSwitch = (checked: boolean) => {
-		setCheck(checked);
-		checked ? context.setTheme('dark') : context.setTheme('light');
-	}
 	return (
-		<div className="background h-[70px]">
+		<div className={`fixed z-[50] h-[70px] w-full ${context.theme == 'dark' ? 'background' : 'background_light'}`}>
 			<div className="header container w-100 h-100 ">
 				<div className="row align-items-center h-100 w-100">
 
 					<div className="title-text col-md flex justify-content-between">
 						<h1>Akiira</h1>
 						<div className="menu col-md">
-							<Dropdown overlay={menu} placement="bottomRight" arrow>
+							<Dropdown overlay={menu} placement="bottomRight" arrow className="background">
 								<Button className="botton-menu">
 									<MenuOutlined className="icon-menu" />
 								</Button>
@@ -60,7 +82,34 @@ const Header: FC = () => {
 						</div>
 					</div>
 
-					<ul className="ul w-full flex justify-content-center col-md gap-5 ">
+					<div className="col-md w-full nav-header">
+						<Menu onClick={(e) => handleClick(e)}
+							selectedKeys={[current]}
+							mode="horizontal"
+							theme={context.theme}
+							className="flex justify-content-center">
+							<SubMenu key="SubMenu" title="Profile">
+								<Menu.ItemGroup title="Table of content">
+									<Menu.Item key="setting:1">Aboutme</Menu.Item>
+									<Menu.Item key="setting:2">Education</Menu.Item>
+									<Menu.Item key="setting:3">Work</Menu.Item>
+									<Menu.Item key="setting:4">Skill</Menu.Item>
+									<Menu.Item key="setting:5">Contactme</Menu.Item>
+								</Menu.ItemGroup>
+							</SubMenu>
+							<Menu.Item key="block">
+								<a href="/" target="_blank" rel="noopener noreferrer">
+									Block
+								</a>
+							</Menu.Item>
+							<Menu.Item key="Contact" >
+								Contactme
+							</Menu.Item>
+						</Menu>
+					</div>
+
+
+					{/* <ul className="ul w-full flex justify-content-center col-md gap-5 ">
 						<li>
 							Profile
 						</li>
@@ -70,7 +119,7 @@ const Header: FC = () => {
 						<li>
 							Contact
 						</li>
-					</ul>
+					</ul> */}
 
 					<div className="switch col-md align-items-center">
 						<Switch

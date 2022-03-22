@@ -1,0 +1,21 @@
+.name_dark {
+    padding-left: 10px;
+    font-family: 'Monoid-Bold';
+    margin-bottom: 0;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    color: #fafafa !important;
+}
+
+.name {
+    padding-left: 10px;
+    font-family: 'Monoid-Bold';
+    margin-bottom: 0;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    color: #3f3f3f !important;
+}
+
+.background_light {
+    background-color: #b8fff9
+}
