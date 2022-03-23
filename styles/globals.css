@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-    font-family: Monoid;
-    src: url(/Monoid-Regular.ttf) format('truetype');
+    font-family: JetBrainsMono-Regular;
+    src: url(/font/JetBrainsMono-Regular.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: Monoid-Bold;
-    src: url(/Monoid-Bold.ttf) format('truetype');
+    font-family: JetBrainsMono-Bold;
+    src: url(/font/JetBrainsMono-Bold.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: Monoid-ltalic;
-    src: url(/Monoid-ltalic.ttf) format('truetype');
+    font-family: JetBrainsMono-Italic;
+    src: url(/font/JetBrainsMono-Italic.ttf) format('truetype');
 }
 
 * {
     box-sizing: border-box;
-    font-family: 'Monoid';
+    font-family: 'JetBrainsMono-Regular';
     margin: 0;
 }
 
@@ -41,9 +41,9 @@ h2 {
 
 .title-text h1 {
     padding-left: 10px;
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
-    font-size: 24px !important;
+    font-size: 26px !important;
     font-weight: 600 !important;
     color: #fafafa !important;
 }
@@ -94,7 +94,7 @@ h2 {
 }
 
 .title-footer h1 {
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     padding-left: 17px;
     color: #fafafafa;
     font-size: 24px;
@@ -128,12 +128,25 @@ h2 {
     justify-content: flex-end;
 }
 
-.bg-content {
+.bg-content,
+.menu_q_dark ul {
     background-color: #04293a;
 }
 
-.bg-content-light {
-    background-color: #b8fff9;
+.bg-content-light,
+.menu_q_light ul {
+    background-color: #ffffff;
+    color: #3f3f3f;
+}
+
+.title_q h1 {
+    font-family: 'JetBrainsMono-Bold';
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.title_q p {
+    font-size: 16px;
 }
 
 
@@ -150,12 +163,12 @@ h2 {
 }
 
 .name {
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     color: #fafafa;
     margin: 0;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width:820px) {
     .nav-header,
     .switch {
         display: none;
@@ -168,6 +181,12 @@ h2 {
         background: unset !important;
         border: unset !important;
     }
+    .skillcontent {
+        padding: unset !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
     .icon-menu {
         height: 100%;
         width: auto;
@@ -189,7 +208,8 @@ h2 {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-    .twocontent {
+    .twocontent,
+    .q_content {
         padding: unset !important;
     }
 }

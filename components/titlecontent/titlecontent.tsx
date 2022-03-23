@@ -35,7 +35,7 @@ export default function Titlecontent() {
               <h2 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>Jetniphan Pukkham</h2>
               <h3 className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>Web Developer</h3>
               <div className="personal pt-[2rem] leading-relaxed">
-                <span>Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.</span>
+                <p>Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.</p>
               </div>
             </div>
             <div className="flex justify-content-center w-full pt-[2rem]">
@@ -48,7 +48,7 @@ export default function Titlecontent() {
           </div>
           <div className="col-lg-5 w-full flex justify-content-center">
             <div className={`${styles.img}`}>
-              <img src="/IMG_4099.jpg" alt="profile"></img>
+              <img src="image/profile.jpg" alt="profile"></img>
             </div>
           </div>
         </div>

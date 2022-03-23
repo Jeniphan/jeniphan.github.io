@@ -5,25 +5,25 @@
 
 .title h1 {
     /* color: #fafafa; */
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     font-size: 24px;
 }
 
 .title h2 {
     /* color: #fafafa; */
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
 }
 
 .title h3 {
     font-size: 16px;
     /* color: #fafafa6e; */
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
 }
 
-.title span {
-    font-family: 'Monoid';
+.title p {
+    font-family: 'JetBrainsMono-Regular';
     /* color: #fafafa; */
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .button {
@@ -38,7 +38,7 @@
 }
 
 .button_text span {
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     color: #fafafa;
 }
 

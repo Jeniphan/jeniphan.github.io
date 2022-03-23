@@ -1,6 +1,6 @@
 .title_dark h1 {
     padding: 0;
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
     font-size: 36px !important;
     font-weight: 600 !important;
@@ -10,7 +10,7 @@
 .title h1 {
     color: #3f3f3f;
     padding: 0;
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
     font-size: 36px !important;
     font-weight: 600 !important;
@@ -32,18 +32,18 @@
     text-justify: center;
     width: 320px !important;
     height: 320px !important;
-    box-shadow: 10px 10px 3px #ECB365;
+    box-shadow: 10px 10px 2px #7868e6;
 }
 
 .header_dark h1 {
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     color: #fafafa;
     font-size: 32px;
     font-weight: 600 !important;
 }
 
 .header h1 {
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     color: #3f3f3f;
     font-size: 32px;
     font-weight: 600 !important;

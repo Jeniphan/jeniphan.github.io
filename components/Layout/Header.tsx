@@ -2,7 +2,7 @@ import { useAppContext } from '@hooks/context';
 import React, { FC, useEffect } from 'react'
 import Switch from "react-switch";
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
-import { Menu, Dropdown, Button } from 'antd';
+import { Menu, Dropdown, Button, Tooltip } from 'antd';
 import { MenuOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
 
 
@@ -98,28 +98,15 @@ const Header: FC = () => {
 								</Menu.ItemGroup>
 							</SubMenu>
 							<Menu.Item key="block">
-								<a href="/" target="_blank" rel="noopener noreferrer">
+								<Tooltip placement="bottom" title="Coming soon">
 									Block
-								</a>
+								</Tooltip>
 							</Menu.Item>
 							<Menu.Item key="Contact" >
 								Contactme
 							</Menu.Item>
 						</Menu>
 					</div>
-
-
-					{/* <ul className="ul w-full flex justify-content-center col-md gap-5 ">
-						<li>
-							Profile
-						</li>
-						<li>
-							Block
-						</li>
-						<li>
-							Contact
-						</li>
-					</ul> */}
 
 					<div className="switch col-md align-items-center">
 						<Switch

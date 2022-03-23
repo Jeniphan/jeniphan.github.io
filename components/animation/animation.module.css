@@ -1,6 +1,6 @@
 .name_dark {
     padding-left: 10px;
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
     font-size: 28px !important;
     font-weight: 600 !important;
@@ -9,7 +9,7 @@
 
 .name {
     padding-left: 10px;
-    font-family: 'Monoid-Bold';
+    font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
     font-size: 28px !important;
     font-weight: 600 !important;
