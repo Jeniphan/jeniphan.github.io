@@ -9,13 +9,13 @@ export default function Aboutme() {
 
   const context = useAppContext()
   return (
-    <div className={`${styles.about} w-full row justify-content-center h-[100vh] pt-[100px] m-0`}>
+    <div className={`${styles.about} w-full row justify-content-center pt-[100px] pb-[100px] m-0`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
         <h1>About me</h1>
         <p>Personal Profile</p>
       </div>
 
-      <div className="row">
+      <div className="row gap-y-5">
         <div className="col-lg-6 flex justify-content-center">
           <div className={`${styles.img}`}>
             <img src="image/aboutme.jpg" alt="about"></img>
@@ -33,9 +33,15 @@ export default function Aboutme() {
             <p>{text}</p>
           </div>
           <div className="button w-full flex flex justify-content-center pt-[2rem]">
-            <Button className={`${styles.button_text}`} type="primary" shape="round" icon={<BsFillArrowDownLeftCircleFill className="text-[18px]" />}>
-              Resume
-            </Button>
+            <a href="/resume/เจตนิพันธ์ ปุกคำ.pdf" className="" target="_blank" rel="noopener noreferrer">
+              <Button className={`${styles.button_text}`}
+                type="primary"
+                shape="round"
+                icon={<BsFillArrowDownLeftCircleFill
+                  className="text-[18px]" />}>
+                Resume
+              </Button>
+            </a>
           </div>
         </div>
 

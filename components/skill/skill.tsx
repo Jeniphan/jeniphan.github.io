@@ -145,7 +145,8 @@ export default function Skill() {
           onClick={(e) => handleClick(e)}
           selectedKeys={[current]}
           mode="horizontal"
-          className="flex justify-content-center">
+          className="flex justify-content-center"
+          theme={context.theme}>
           <Menu.Item key="tech">
             Technical Skills
           </Menu.Item>
@@ -156,19 +157,19 @@ export default function Skill() {
         </Menu>
       </div>
 
-      <div className={`row w-full ${styles.major_content} m-0 ${checkSkill.current == 'tech' ? '' : styles.check}`}>
+      <div className={`row w-full h-full pb-[150px] ${styles.major_content} m-0 ${checkSkill.current == 'tech' ? '' : styles.check}`}>
         <Fade left when={checkSkill.current == 'tech' ? true : false}>
-          <div className="col-lg-4 flex justify-content-center">
-            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-[#B8B5FF]'}`}>
-              <div className={`${context.theme == 'dark' ? styles.hedder : styles.hedder_light}`}>
+          <div className="col-lg-4 h-full flex justify-content-center">
+            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+              <div className={`${styles.hedder}`}>
                 <h4 className="">FrontEnd Developer</h4>
               </div>
               <div className="content_front p-[1rem]">
                 {frontend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
-                      <p className={`pl-[1.5rem] text-[#fafafa6e] ${context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}`}>{data.discription}</p>
+                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
+                      <p className={`pl-[1.5rem] text-[#fafafa6e] }`}>{data.discription}</p>
                     </div>
                   )
                 })}
@@ -177,16 +178,16 @@ export default function Skill() {
           </div>
 
           <div className="col-lg-4 flex justify-content-center">
-            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-[#B8B5FF]'}`}>
-              <div className={`${context.theme == 'dark' ? styles.hedder : styles.hedder_light}`}>
+            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+              <div className={`${styles.hedder}`}>
                 <h4 className="">BackEnd Developer</h4>
               </div>
               <div className="content_back p-[1rem]">
                 {backend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
-                      <p className={`pl-[1.5rem] ${context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}`} >{data.discription}</p>
+                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
+                      <p className={`pl-[1.5rem] text-[#fafafa6e]`} >{data.discription}</p>
                     </div>
                   )
                 })}
@@ -194,17 +195,17 @@ export default function Skill() {
             </div>
           </div>
 
-          <div className="col-lg-4 flex justify-content-center">
-            <div className={`w-[270px] h-[536px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-[#B8B5FF]'}`}>
-              <div className={`${context.theme == 'dark' ? styles.hedder : styles.hedder_light}`}>
+          <div className="col-lg-4 h-full flex justify-content-center">
+            <div className={`w-[270px] ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+              <div className={`${styles.hedder}`}>
                 <h4 className="">Embaddeds and Programing</h4>
               </div>
               <div className="content_embad p-[1rem]">
                 {embaddeds.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
-                      <p className={`pl-[1.5rem] ${context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}`}>{data.discription}</p>
+                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
+                      <p className={`pl-[1.5rem] text-[#fafafa6e]`}>{data.discription}</p>
                     </div>
                   )
                 })}
@@ -217,16 +218,16 @@ export default function Skill() {
       <div className={`${checkSkill.current == 'tech' ? styles.check : ''} row w-full ${styles.major_content} m-0`}>
         <Fade right when={checkSkill.current == 'soft' ? true : false}>
           <div className="col-lg flex justify-content-center">
-            <div className={`w-auto p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-[#B8B5FF]'}`}>
-              <div className={`${context.theme == 'dark' ? styles.hedder : styles.hedder_light}`}>
+            <div className={`w-auto p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+              <div className={`${styles.hedder}`}>
                 <h4 className="">Soft Skills</h4>
               </div>
               <div className="content_soft p-[1rem]">
                 {softskills.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
-                      <p className={`pl-[1.5rem] ${context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}`}>{data.discription}</p>
+                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}> <HiBadgeCheck className="w-[18px] h-[18px]" /> {data.title} </h6>
+                      <p className={`pl-[1.5rem] text-[#fafafa6e]`}>{data.discription}</p>
                     </div>
                   )
                 })}

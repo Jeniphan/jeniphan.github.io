@@ -41,11 +41,12 @@
 }
 
 .menu_skill_dark ul {
-    background: #04293a;
+    background: #04293a !important;
+    color: #fafafa;
 }
 
 .menu_skill_light ul {
-    background: #ffffff;
+    background: #ffffff !important;
     color: #3f3f3f;
 }
 
@@ -53,13 +54,22 @@
     display: none !important;
 }
 
-@media screen and (max-width:820px) {
+@media screen and (max-height: 820px) {
+    .skill {
+        height: 100% !important;
+    }
+    /* .h__em {
+        height: 600px;
+    } */
+}
+
+@media screen and (max-width:992px) {
     .skill {
         height: 100% !important;
     }
     .major_content {
         padding-top: 70px !important;
         padding-bottom: 70px !important;
-        gap: 1rem !important;
+        row-gap: 1rem !important;
     }
 }

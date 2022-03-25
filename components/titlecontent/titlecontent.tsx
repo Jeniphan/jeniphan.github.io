@@ -4,6 +4,7 @@ import { BsFacebook, BsLinkedin, BsGithub, BsMailbox2 } from 'react-icons/bs'
 import { Button } from 'antd';
 import Screen from '@components/animation/screen';
 import { useAppContext } from '@hooks/context';
+import Link from 'next/link';
 
 
 export default function Titlecontent() {
@@ -17,15 +18,27 @@ export default function Titlecontent() {
       <div className={`w-full h-full flex items-center`}>
         <div className={`${styles.content} row items-center`}>
           <div className={`col-lg-2 ${styles.ul_icon}`}>
-            <ul className={`${styles.ul_icon_content} ${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
+            <ul className={`${styles.ul_icon_content}`}>
               <li className="py-[1rem]">
-                <BsFacebook className="w-[2rem] h-[2rem]" />
+                <a href="https://www.facebook.com/jeniphan.pukkham/"
+                  className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}
+                  target="_blank" rel="noopener noreferrer">
+                  <BsFacebook className="w-[2rem] h-[2rem]" />
+                </a>
               </li >
               <li className="py-[1rem]">
-                <BsLinkedin className="w-[2rem] h-[2rem]" />
+                <a href="https://www.linkedin.com/in/jetniphan-pukkham-957671212/"
+                  className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}
+                  target="_blank" rel="noopener noreferrer">
+                  <BsLinkedin className="w-[2rem] h-[2rem]" />
+                </a>
               </li>
               <li className="py-[1rem]">
-                <BsGithub className="w-[2rem] h-[2rem]" />
+                <a href="https://github.com/Jeniphan"
+                  className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}
+                  target="_blank" rel="noopener noreferrer">
+                  <BsGithub className="w-[2rem] h-[2rem]" />
+                </a>
               </li>
             </ul>
           </div>
@@ -40,9 +53,11 @@ export default function Titlecontent() {
             </div>
             <div className="flex justify-content-center w-full pt-[2rem]">
               <div className={`${styles.button}`}>
-                <Button className={`${styles.button_text}`} type="primary" shape="round" icon={<BsMailbox2 className="text-[18px]" />}>
-                  Contactme
-                </Button>
+                <Link href="/#contact">
+                  <Button className={`${styles.button_text}`} type="primary" shape="round" icon={<BsMailbox2 className="text-[18px]" />}>
+                    Contactme
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

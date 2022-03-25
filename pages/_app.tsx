@@ -7,11 +7,26 @@ import 'bootstrap/dist/css/bootstrap.css'
 // import 'antd/dist/antd.css';
 import 'animate.css';
 import Fade from 'react-reveal/Fade';
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<ContextWrapper>
+
+			<Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+
+			<Script strategy="lazyOnload">
+				{`
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+				page_path: window.location.pathname,
+				});
+		`}
+			</Script>
+
 			<Fade butoom>
 				<Layout>
 					<Component {...pageProps} />

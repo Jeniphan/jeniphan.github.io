@@ -1,12 +1,12 @@
 import { useAppContext } from '@hooks/context';
 import React, { FC, useEffect } from 'react'
+import Link from 'next/link';
+
 import Switch from "react-switch";
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
 import { Menu, Dropdown, Button, Tooltip } from 'antd';
-import { MenuOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
-
-
-
+import { MenuOutlined } from '@ant-design/icons';
+import { Gopage } from '@helper/types';
 
 const Header: FC = () => {
 	const context = useAppContext()
@@ -15,7 +15,11 @@ const Header: FC = () => {
 
 	const handleClick = e => {
 		console.log('click ', e);
+		window.location.hash = (e.key)
 		setPage({ current: e.key });
+		if (e.key == 'works') {
+			context.setComponent('works')
+		}
 	};
 
 	const { current } = page;
@@ -25,6 +29,10 @@ const Header: FC = () => {
 		setCheck(checked);
 		checked ? context.setTheme('light') : context.setTheme('dark');
 		localStorage.setItem('theme', checked ? 'light' : 'dark')
+	}
+
+	const GoWork = (e: Gopage) => {
+		context.setComponent(e)
 	}
 
 	useEffect(() => {
@@ -38,22 +46,54 @@ const Header: FC = () => {
 
 	const menu = (
 		<Menu className={`w-[180px]`} theme={context.theme}>
-			<Menu.Item >
-				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
-					Proflie
+			<Menu.Item key="profile">
+				<Link href='/#profile'>
+					<a className="list-menu">
+						Profile
+					</a>
+				</Link>
+			</Menu.Item>
+			<Menu.Item key="about">
+				<Link href='/#about'>
+					<a className="list-menu">
+						About
+					</a>
+				</Link>
+			</Menu.Item>
+			<Menu.Item key="education">
+				<Link href='/#education'>
+					<a className="list-menu" onClick={(e) => GoWork('educations')}>
+						Educations
+					</a>
+				</Link>
+			</Menu.Item>
+			<Menu.Item key="work">
+				<Link href='/#works'>
+					<a className="list-menu" onClick={(e) => GoWork('works')}>
+						works
+					</a>
+				</Link>
+			</Menu.Item>
+			<Menu.Item key="project">
+				<Link href='/#projects'>
+					<a className="list-menu">
+						Projects
+					</a>
+				</Link>
+			</Menu.Item>
+			<Menu.Item key="blog">
+				<a className="list-menu disbles">
+					Blog
 				</a>
 			</Menu.Item>
-			<Menu.Item>
-				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
-					Block
-				</a>
+			<Menu.Item key="contact">
+				<Link href='/#contact'>
+					<a className="list-menu">
+						Contact
+					</a>
+				</Link>
 			</Menu.Item>
-			<Menu.Item>
-				<a target="_blank" rel="noopener noreferrer" href="/" className="list-menu">
-					Contact
-				</a>
-			</Menu.Item>
-			<Menu.Item>
+			<Menu.Item key="switch">
 				<Switch
 					onChange={(e) => toggleSwitch(e)}
 					checked={check}
@@ -67,12 +107,14 @@ const Header: FC = () => {
 	);
 
 	return (
-		<div className={`fixed z-[50] h-[70px] w-full ${context.theme == 'dark' ? 'background' : 'background_light'}`}>
+		<div className={`fixed z-[50] h-[70px] w-full ${context.theme == 'dark' ? 'background' : 'bg-primary'}`}>
 			<div className="header container w-100 h-100 ">
 				<div className="row align-items-center h-100 w-100">
 
 					<div className="title-text col-md flex justify-content-between">
-						<h1>Akiira</h1>
+						<Link href="/#profile">
+							<h1>Akiira</h1>
+						</Link>
 						<div className="menu col-md">
 							<Dropdown overlay={menu} placement="bottomRight" arrow className="background">
 								<Button className="botton-menu">
@@ -90,20 +132,22 @@ const Header: FC = () => {
 							className="flex justify-content-center">
 							<SubMenu key="SubMenu" title="Profile">
 								<Menu.ItemGroup title="Table of content">
-									<Menu.Item key="setting:1">Aboutme</Menu.Item>
-									<Menu.Item key="setting:2">Education</Menu.Item>
-									<Menu.Item key="setting:3">Work</Menu.Item>
-									<Menu.Item key="setting:4">Skill</Menu.Item>
-									<Menu.Item key="setting:5">Contactme</Menu.Item>
+									<Menu.Item key="profile">Profile</Menu.Item>
+									<Menu.Item key="about">About</Menu.Item>
+									<Menu.Item key="education" onClick={(e) => GoWork('educations')}>Educations</Menu.Item>
+									<Menu.Item key="works" onClick={(e) => GoWork('works')}>Works</Menu.Item>
+									<Menu.Item key="skills">Skills</Menu.Item>
+									<Menu.Item key="projects">Projects</Menu.Item>
+									<Menu.Item key="contact">Contact</Menu.Item>
 								</Menu.ItemGroup>
 							</SubMenu>
-							<Menu.Item key="block">
+							<Menu.Item key="blog">
 								<Tooltip placement="bottom" title="Coming soon">
-									Block
+									Blog
 								</Tooltip>
 							</Menu.Item>
 							<Menu.Item key="Contact" >
-								Contactme
+								Contact
 							</Menu.Item>
 						</Menu>
 					</div>

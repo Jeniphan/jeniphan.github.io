@@ -4,6 +4,7 @@ import screenData2 from './screen-light.json'
 
 import Lottie from "react-lottie";
 import { useAppContext } from '@hooks/context';
+import Link from 'next/link';
 
 export default function Screen() {
 
@@ -29,7 +30,11 @@ export default function Screen() {
 
   return (
     <div>
-      <Lottie options={constext.theme == 'dark' ? defaultOptions : defaultOptions2} height={200} width={100} />
+      <Link href="/#about">
+        <a className="">
+          <Lottie options={constext.theme == 'dark' ? defaultOptions : defaultOptions2} height={200} width={100} />
+        </a>
+      </Link>
     </div>
   )
 }

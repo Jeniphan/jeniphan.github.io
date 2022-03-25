@@ -1,0 +1,61 @@
+.title_dark h1 {
+    padding: 0;
+    font-family: 'JetBrainsMono-Bold';
+    margin-bottom: 0;
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    color: #fafafa !important;
+}
+
+.title h1 {
+    color: #3f3f3f;
+    padding: 0;
+    font-family: 'JetBrainsMono-Bold';
+    margin-bottom: 0;
+    font-size: 36px !important;
+    font-weight: 600 !important;
+}
+
+.title_dark p {
+    color: #fafafa6e;
+    font-size: 16px;
+}
+
+.title p {
+    color: #3f3f3f6e;
+    font-size: 16px;
+}
+
+.bg__card__dark {
+    background: #064663 !important;
+}
+
+.bg__card {
+    border-radius: 12px;
+}
+
+.card__body__dark h3 {
+    font-size: 18px;
+    color: #fafafa;
+}
+
+.card__body h3 {
+    color: #3f3f3f;
+    font-size: 18px;
+}
+
+.card__body p {
+    color: #3f3f3f;
+}
+
+.card__body p:hover {
+    color: orange;
+}
+
+.card__body__dark p:hover {
+    color: orange;
+}
+
+.card__body div {
+    color: #3f3f3f6e !important;
+}

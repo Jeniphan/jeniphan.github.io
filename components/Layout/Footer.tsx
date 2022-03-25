@@ -2,11 +2,12 @@ import React, { FC } from 'react'
 import { Divider } from 'antd'
 import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context'
+import Link from 'next/link'
 
 const Footer: FC = () => {
 	const context = useAppContext()
 	return (
-		<div className={`h-[220px] footer ${context.theme == 'dark' ? 'background' : 'background_light'}`}>
+		<div className={`h-[220px] footer ${context.theme == 'dark' ? 'background' : 'bg-primary'}`}>
 			<div className="container w-full h-full">
 				<div className="row align-items-center h-full">
 					<div className="col-md-4 title-footer">
@@ -17,13 +18,25 @@ const Footer: FC = () => {
 					<div className="col-md-4">
 						<ul className="ul-footer row justify-content-center gap-2 p-0 mb-0">
 							<li className="col-4 w-auto">
-								Experience
+								<Link href="/#about">
+									<a className="text-[#fafafa]">
+										About
+									</a>
+								</Link>
 							</li>
 							<li className="col-4 w-auto">
-								Skill
+								<Link href="/#skills">
+									<a className="text-[#fafafa]">
+										Skills
+									</a>
+								</Link>
 							</li>
 							<li className="col-4 w-auto">
-								Contact
+								<Link href="/#contact">
+									<a className="text-[#fafafa]">
+										Contact
+									</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -31,25 +44,30 @@ const Footer: FC = () => {
 					<div className="col-md-4">
 						<ul className="ul-footer-icon gap-4 mb-0 pl-0">
 							<li>
-								<BsFacebook className="w-[2rem] h-[2rem]" />
+								<a href="https://www.facebook.com/jeniphan.pukkham/" className="" target="_blank" rel="noopener noreferrer">
+									<BsFacebook className="w-[2rem] h-[2rem] text-[#fafafa]" />
+								</a>
 							</li>
 							<li>
-								<BsLinkedin className="w-[2rem] h-[2rem]" />
+								<a href="https://www.linkedin.com/in/jetniphan-pukkham-957671212/" className="" target="_blank" rel="noopener noreferrer">
+									<BsLinkedin className="w-[2rem] h-[2rem] text-[#fafafa]" />
+								</a>
 							</li>
 							<li>
-								<BsGithub className="w-[2rem] h-[2rem]" />
+								<a href="https://github.com/Jeniphan" className="" target="_blank" rel="noopener noreferrer">
+									<BsGithub className="w-[2rem] h-[2rem] text-[#fafafa]" />
+								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div className={`${context.theme == 'dark' ? 'background' : 'background_light'}`}>
+			<div className={`${context.theme == 'dark' ? 'background' : 'bg-primary'}`}>
 				<div className="container">
 					<Divider className="" />
 				</div>
-
 			</div>
-			<p className={`credit text-center ${context.theme == 'dark' ? 'background' : 'background_light text-[#fafafa6e]'}`}>
+			<p className={`credit text-center ${context.theme == 'dark' ? 'background' : 'bg-primary text-[#fafafa]'}`}>
 				Copyright © 2022 Jetniphan Pukkham. All right reserved.
 			</p>
 		</div>
