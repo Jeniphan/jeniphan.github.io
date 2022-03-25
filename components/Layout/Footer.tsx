@@ -18,21 +18,21 @@ const Footer: FC = () => {
 					<div className="col-md-4">
 						<ul className="ul-footer row justify-content-center gap-2 p-0 mb-0">
 							<li className="col-4 w-auto">
-								<Link href="/#about">
+								<Link href="/#about" passHref>
 									<a className="text-[#fafafa]">
 										About
 									</a>
 								</Link>
 							</li>
 							<li className="col-4 w-auto">
-								<Link href="/#skills">
+								<Link href="/#skills" passHref>
 									<a className="text-[#fafafa]">
 										Skills
 									</a>
 								</Link>
 							</li>
 							<li className="col-4 w-auto">
-								<Link href="/#contact">
+								<Link href="/#contact" passHref>
 									<a className="text-[#fafafa]">
 										Contact
 									</a>

@@ -14,9 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ContextWrapper>
 
-			<Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+			<Script strategy="lazyOnload" id="my-script1" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
 
-			<Script strategy="lazyOnload">
+			<Script strategy="lazyOnload" id="my-script2">
 				{`
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}

@@ -42,12 +42,42 @@ const Home: NextPage = () => {
 		<>
 			<Head>
 				<title>Jetniphan Pukkham-@All about me.</title>
-				<meta name="theme-color" content="#FC4F4F" />
-				<meta property="og:type" content="website" />
 				<meta
 					name="description"
-					content="Jetniphan Pukkham-@All about me."
+					content="Hello my name is Jetniphan Pukkham. I'am FrontEnd Developer. This all about for me."
 				/>
+
+				<meta property="og:title" content="Jetniphan Pukkham-@All about me." />
+				<meta
+					property="og:description"
+					content="Hello my name is Jetniphan Pukkham. I'am FrontEnd Developer. This all about for me."
+				/>
+				<meta property="og:url" content="https://jeniphan.github.io/" />
+				<meta property="og:type" content="website" />
+				<meta name="theme-color" content="#FC4F4F" />
+				<meta property="og:image" content="/image/SEO__Jetniphan.png" />
+				< meta property="fb:app_id" content="1137762390349813" />
+
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+				<meta property="twitter:card" content="summary_large_image" />
+				<meta property="twitter:image" content="/image/SEO__Jetniphan.png" />
+				<meta property="twitter:url" content="https://jeniphan.github.io/" />
+				<meta property="twitter:title" content="Jetniphan Pukkham-@All about me." />
+				<meta
+					property="twitter:description"
+					content="Hello my name is Jetniphan Pukkham. I'am FrontEnd Developer. This all about for me."
+				/>
+				<meta name="twitter:site" content="@Akiira" />
+				< meta name="twitter:creator" content="@Akiira" />
+
+				<meta
+					name="keywords"
+					content="akiira, Akiira, akira, Akiira, akiira.online, akiira about, jaay jetniphan, Jaay, Jay, Jaay Jetniphan, 
+					Jeniphan Pukkham, Jetniphan, Jeniphan, Jeniphan Pukkham, Jaay Jeniphan, jaay jeniphan, Jeni, jeni,
+					web, web developer, front end, frontend, front-end, frontend developer, frontend dev, full-stack, full stack, dev"
+				/>
+
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 

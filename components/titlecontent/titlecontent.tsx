@@ -53,7 +53,7 @@ export default function Titlecontent() {
             </div>
             <div className="flex justify-content-center w-full pt-[2rem]">
               <div className={`${styles.button}`}>
-                <Link href="/#contact">
+                <Link href="/#contact" passHref>
                   <Button className={`${styles.button_text}`} type="primary" shape="round" icon={<BsMailbox2 className="text-[18px]" />}>
                     Contactme
                   </Button>

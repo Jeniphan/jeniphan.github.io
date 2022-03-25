@@ -47,35 +47,35 @@ const Header: FC = () => {
 	const menu = (
 		<Menu className={`w-[180px]`} theme={context.theme}>
 			<Menu.Item key="profile">
-				<Link href='/#profile'>
+				<Link href='/#profile' passHref>
 					<a className="list-menu">
 						Profile
 					</a>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="about">
-				<Link href='/#about'>
+				<Link href='/#about' passHref>
 					<a className="list-menu">
 						About
 					</a>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="education">
-				<Link href='/#education'>
+				<Link href='/#education' passHref>
 					<a className="list-menu" onClick={(e) => GoWork('educations')}>
 						Educations
 					</a>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="work">
-				<Link href='/#works'>
+				<Link href='/#works' passHref>
 					<a className="list-menu" onClick={(e) => GoWork('works')}>
 						works
 					</a>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="project">
-				<Link href='/#projects'>
+				<Link href='/#projects' passHref>
 					<a className="list-menu">
 						Projects
 					</a>
@@ -87,7 +87,7 @@ const Header: FC = () => {
 				</a>
 			</Menu.Item>
 			<Menu.Item key="contact">
-				<Link href='/#contact'>
+				<Link href='/#contact' passHref>
 					<a className="list-menu">
 						Contact
 					</a>
@@ -112,7 +112,7 @@ const Header: FC = () => {
 				<div className="row align-items-center h-100 w-100">
 
 					<div className="title-text col-md flex justify-content-between">
-						<Link href="/#profile">
+						<Link href="/#profile" passHref>
 							<h1>Akiira</h1>
 						</Link>
 						<div className="menu col-md">
@@ -146,7 +146,7 @@ const Header: FC = () => {
 									Blog
 								</Tooltip>
 							</Menu.Item>
-							<Menu.Item key="Contact" >
+							<Menu.Item key="contact" >
 								Contact
 							</Menu.Item>
 						</Menu>

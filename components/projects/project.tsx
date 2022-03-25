@@ -20,10 +20,10 @@ export default function Project() {
       link: ''
     },
     {
-      title: 'International Conference on Power',
+      title: 'Monitoring Parameters of Three-Phase Induction Motor Using IoT',
       date: 'October, 2020s',
       discription: 'Project Advisor to Monitoring Parameter of Three-Phase Induction Motor Using IOT.',
-      link: ''
+      link: 'https://ieeexplore.ieee.org/document/9440368'
     },
     {
       title: 'Hotel management system',
@@ -47,13 +47,7 @@ export default function Project() {
       title: '2B-KMUTT #14',
       date: 'April, 2017s',
       discription: 'Design and create an Controlling the water system using for Crayfish shrimp farming IOT project by using Arduino and ESP8266.',
-      link: 'https://www.youtube.com/watch?v=Lz7Eu_Uevfw'
-    },
-    {
-      title: '2B-KMUTT #14',
-      date: 'April, 2017s',
-      discription: 'Design and create an Controlling the water system using for Crayfish shrimp farming IOT project by using Arduino and ESP8266.',
-      link: 'https://www.youtube.com/watch?v=Lz7Eu_Uevfw'
+      link: 'https://drive.google.com/file/d/1_jPAFsYiGiDVm1DqAQmevm51PP-3-B4T/view?usp=sharing'
     }
   ]
   return (
