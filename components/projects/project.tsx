@@ -1,5 +1,5 @@
 import { useAppContext } from '@hooks/context';
-import { NoStyleItemContext } from 'antd/lib/form/context';
+import Link from 'next/link';
 import React, { useState } from 'react'
 import { BsCalendarEvent } from 'react-icons/bs';
 import styles from './project.module.css'
@@ -58,7 +58,7 @@ export default function Project() {
       </div>
 
       <div className="projectcontent pt-[50px] w-full">
-        <div className={`${styles.contennercard} ${showMore ? 'h-auto' : 'h-[724px] overflow-hidden'} row w-ful gap-y-5 justify-content-center`}>
+        <div className={`${styles.contennercard} ${showMore ? 'h-auto' : 'h-[723px] overflow-hidden'} row w-ful gap-y-5 justify-content-center`}>
           {project.map((data, index) => {
             return (
               <div className="col-lg-4" key={index}>
@@ -84,7 +84,11 @@ export default function Project() {
         <button type="button"
           className="btn btn-primary"
           onClick={(e) => Showmore(e)}>
-          {showMore ? 'Hidden' : 'Show more'}
+          <Link href='/#projects' passHref>
+            <a className="text-[#fafafa]">
+              {showMore ? 'Hidden' : 'Show more'}
+            </a>
+          </Link>
         </button>
       </div>
     </div >

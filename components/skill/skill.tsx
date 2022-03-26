@@ -79,7 +79,7 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'Respberry Pi',
+      title: 'Raspberry Pi',
       discription: 'Intermediate'
     },
     {

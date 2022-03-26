@@ -54,7 +54,7 @@ const Home: NextPage = () => {
 				/>
 				<meta property="og:url" content="https://jeniphan.github.io/" />
 				<meta property="og:type" content="website" />
-				<meta name="theme-color" content="#FC4F4F" />
+				<meta name="theme-color" content="#ffa500" />
 				<meta property="og:image" content="/image/SEO__Jetniphan.png" />
 				< meta property="fb:app_id" content="1137762390349813" />
 
