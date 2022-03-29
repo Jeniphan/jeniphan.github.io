@@ -6,7 +6,6 @@ import Screen from '@components/animation/screen';
 import { useAppContext } from '@hooks/context';
 import Link from 'next/link';
 
-
 export default function Titlecontent() {
 
   const context = useAppContext()
@@ -44,9 +43,15 @@ export default function Titlecontent() {
           </div>
           <div className="col-lg-5 gap-3">
             <div className={`${styles.title} ${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
-              <h1 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>Hi&apos; I am</h1>
-              <h2 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>Jetniphan Pukkham</h2>
-              <h3 className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>Web Developer</h3>
+              <h1 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
+                Hi&apos; I am
+              </h1>
+              <h2 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
+                Jaay Jetniphan
+              </h2>
+              <h3 className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
+                Web Developer
+              </h3>
               <div className="personal pt-[2rem] leading-relaxed">
                 <p>Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.</p>
               </div>
@@ -54,7 +59,8 @@ export default function Titlecontent() {
             <div className="flex justify-content-center w-full pt-[2rem]">
               <div className={`${styles.button}`}>
                 <Link href="/#contact" passHref>
-                  <Button className={`${styles.button_text}`} type="primary" shape="round" icon={<BsMailbox2 className="text-[18px]" />}>
+                  <Button className={`${styles.button_text}`} type="primary" shape="round"
+                    icon={<BsMailbox2 className="text-[18px]" />}>
                     Contactme
                   </Button>
                 </Link>

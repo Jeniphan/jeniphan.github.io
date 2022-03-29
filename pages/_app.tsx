@@ -14,14 +14,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ContextWrapper>
 
-			<Script strategy="lazyOnload" id="my-script1" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+			<Script strategy="lazyOnload" id="my-script1" src={`https://www.googletagmanager.com/gtag/js?id=G-THCPHMZSKM`} />
 
 			<Script strategy="lazyOnload" id="my-script2">
 				{`
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
-				gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+				gtag('config', 'G-THCPHMZSKM', {
 				page_path: window.location.pathname,
 				});
 		`}

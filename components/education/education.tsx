@@ -33,11 +33,21 @@ export default function Education() {
       <Timeline mode='left'>
         {education.map((data, index) => {
           return (
-            <Timeline.Item label={data.year} className={`${styles.education_title} ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`} key={index}>
-              <a href={data.link} className="" target="_blank" rel="noopener noreferrer">
-                <h4 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>{data.name} <BsLink className="" /></h4>
+            <Timeline.Item
+              label={data.year}
+              className={`${styles.education_title} ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}
+              key={index}>
+              <a href={data.link} className=""
+                target="_blank"
+                rel="noopener noreferrer">
+                <h4 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
+                  {data.name}
+                  <BsLink className="" />
+                </h4>
               </a>
-              <p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>{data.major}</p>
+              <p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>
+                {data.major}
+              </p>
             </Timeline.Item>
           )
         })}

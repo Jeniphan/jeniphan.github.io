@@ -18,7 +18,7 @@ import Contact from '@components/contact/contact';
 const Home: NextPage = () => {
 
 	const context = useAppContext()
-	const [checkQualification, setCheckQualification] = useState({ current: 'educations' })
+	const [checkQualification, setCheckQualification] = useState({ current: context.component })
 
 	useEffect(() => {
 		const item = localStorage.getItem('theme')
@@ -29,14 +29,13 @@ const Home: NextPage = () => {
 			context.setTheme(item == 'dark' ? 'dark' : 'light')
 		)
 
-		handleClick({ key: context.component })
-	}, [context.component])
+	}, [])
 
 	const handleClick = (e) => {
-		setCheckQualification({ current: e.key });
+		context.setComponent({ current: e });
 	};
 
-	const { current } = checkQualification;
+	const { current } = context.component;
 
 	return (
 		<>
@@ -81,9 +80,9 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 
-			<div className={`${context.theme == 'dark' ? 'bg-content' : '.bg-content-light'} content`} id="profile">
+			<div className={`${context.theme == 'dark' ? 'bg-content' : '.bg-content-light'} content`}>
 				<div className="container pt-[70px]">
-					<div className="padding_in pr-[100px] pl-[100px]">
+					<div className="padding_in pr-[100px] pl-[100px]" id="profile">
 						<Fade bottom when={context.animation}>
 							<Titlecontent />
 						</Fade>
@@ -93,45 +92,48 @@ const Home: NextPage = () => {
 						<Aboutme />
 					</div>
 
-					<div id="education"></div>
 
-					<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-[100vh] pt-[70px]" id="works">
-						<div className="title_q text-center">
-							<h1 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
-								Qualification
-							</h1>
-							<p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>
-								My personal journey
-							</p>
-						</div>
+					<div id="educations">
+						<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-[100vh] pt-[70px]" id="works">
+							<div className="title_q text-center">
+								<h1 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
+									Qualification
+								</h1>
+								<p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>
+									My personal journey
+								</p>
+							</div>
 
-						<div className={`${context.theme == 'dark' ? 'menu_q_dark' : 'menu_q_light'} mt-[100px]`}>
-							<Menu
-								onClick={(e) => handleClick(e)}
-								selectedKeys={[current]}
-								mode="horizontal"
-								className="flex justify-content-center"
-								theme={context.theme}>
-								<Menu.Item key="educations">
-									Educations
-								</Menu.Item>
+							<div className={`${context.theme == 'dark' ? 'menu_q_dark' : 'menu_q_light'} mt-[100px]`}>
+								<Menu
+									onClick={(e) => {
+										handleClick(e.key)
+									}}
+									selectedKeys={[current]}
+									mode="horizontal"
+									className="flex justify-content-center"
+									theme={context.theme}>
+									<Menu.Item key="educations">
+										Educations
+									</Menu.Item>
 
-								<Menu.Item key="works">
-									Works
-								</Menu.Item>
-							</Menu>
-						</div>
+									<Menu.Item key="works">
+										Works
+									</Menu.Item>
+								</Menu>
+							</div>
 
-						<div className={`${checkQualification.current == 'works' ? 'hidden' : ''} education h-100 w-auto overflow-hidden`}>
-							<Fade left when={checkQualification.current == 'works' ? false : true}>
-								<Education />
-							</Fade>
-						</div>
+							<div className={`${context.component.current == 'works' ? 'hidden' : ''} education h-100 w-auto overflow-hidden`}>
+								<Fade left when={context.component.current == 'works' ? false : true}>
+									<Education />
+								</Fade>
+							</div>
 
-						<div className={`${checkQualification.current == 'works' ? '' : 'hidden'} work h-100 w-auto overflow-hidden`}>
-							<Fade right when={checkQualification.current == 'works' ? true : false}>
-								<Work />
-							</Fade>
+							<div className={`${context.component.current == 'works' ? '' : 'hidden'} work h-100 w-auto overflow-hidden`}>
+								<Fade right when={context.component.current == 'works' ? true : false}>
+									<Work />
+								</Fade>
+							</div>
 						</div>
 					</div>
 

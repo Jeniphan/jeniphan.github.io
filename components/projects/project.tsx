@@ -1,5 +1,4 @@
 import { useAppContext } from '@hooks/context';
-import Link from 'next/link';
 import React, { useState } from 'react'
 import { BsCalendarEvent } from 'react-icons/bs';
 import styles from './project.module.css'
@@ -53,8 +52,12 @@ export default function Project() {
   return (
     <div className={`${styles.project} w-full ${showMore ? 'h-auto pb-[100px]' : 'h-auto pb-[100px]'} pt-[70px]  overflow-hidden m-0`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
-        <h1>Projects</h1>
-        <p>My technical projects</p>
+        <h1>
+          Projects
+        </h1>
+        <p>
+          My technical projects
+        </p>
       </div>
 
       <div className="projectcontent pt-[50px] w-full">
@@ -72,7 +75,10 @@ export default function Project() {
                     <p className={`card-text h-[150px] overflow-hidden ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}>
                       {data.discription}
                     </p>
-                    <a target="_blank" rel="noopener noreferrer" href={data.link} className={`btn btn-primary ${data.link == '' ? 'disabled' : ''}`} role="button" aria-disabled='false'>More</a>
+                    <a target="_blank" rel="noopener noreferrer" href={data.link} className={`btn btn-primary ${data.link == '' ? 'disabled' : ''}`}
+                      role="button" aria-disabled='false'>
+                      More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -83,12 +89,13 @@ export default function Project() {
       <div className="pt-[20px]">
         <button type="button"
           className="btn btn-primary"
-          onClick={(e) => Showmore(e)}>
-          <Link href='/#projects' passHref>
-            <a className="text-[#fafafa]">
-              {showMore ? 'Hidden' : 'Show more'}
-            </a>
-          </Link>
+          onClick={(e) => {
+            Showmore(e)
+            document.querySelector('#projects').scrollIntoView({
+              behavior: 'smooth'
+            })
+          }}>
+          {showMore ? 'Hidden' : 'Show more'}
         </button>
       </div>
     </div >

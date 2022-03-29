@@ -31,7 +31,7 @@ export default function Animation() {
         <FadeIn className="w-full h-full row items-center">
           <div className="col text-center w-full">
             <h1 className={`${context.theme == 'dark' ? styles.name_dark : styles.name} animate__animated animate__bounce`}>Akiira</h1>
-            <Lottie options={defaultOptions} height={50} width={414} className="w-full" />
+            <Lottie options={defaultOptions} height={50} width={414} />
           </div>
         </FadeIn>
       </div>

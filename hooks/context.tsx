@@ -4,16 +4,16 @@ import { Gopage, Theme } from '@helper/types'
 interface SharedState {
 	theme: Theme
 	animation: boolean
-	component: Gopage
+	component: { current: Gopage }
 	setTheme?: (value: Theme) => void
 	setAnimation?: (value: boolean) => void
-	setComponent?: (value: Gopage) => void
+	setComponent?: (value: { current: Gopage }) => void
 }
 
 const defaultState: SharedState = {
 	theme: 'dark',
 	animation: false,
-	component: 'educations'
+	component: { current: 'educations' }
 }
 
 const AppContext = React.createContext<SharedState>(defaultState)
@@ -21,7 +21,7 @@ const AppContext = React.createContext<SharedState>(defaultState)
 export const ContextWrapper: FC = ({ children }) => {
 	const [theme, setTheme] = React.useState<Theme>(defaultState.theme)
 	const [animation, setAnimation] = React.useState<boolean>(defaultState.animation)
-	const [component, setComponent] = React.useState<Gopage>(defaultState.component)
+	const [component, setComponent] = React.useState<{ current: Gopage }>(defaultState.component)
 
 	const sharedState: SharedState = { theme, setTheme, animation, setAnimation, component, setComponent }
 

@@ -46,6 +46,7 @@ h2 {
     font-size: 26px !important;
     font-weight: 600 !important;
     color: #fafafa !important;
+    cursor: pointer;
 }
 
 .switch {
@@ -230,5 +231,17 @@ textarea.ant-input {
     .twocontent,
     .q_content {
         padding: unset !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .content {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .content {
+        padding-top: 100px;
     }
 }
