@@ -17,26 +17,29 @@ const Footer: FC = () => {
 
 					<div className="col-md-4">
 						<ul className="ul-footer row justify-content-center gap-2 p-0 mb-0">
-							<li className="col-4 w-auto">
-								<Link href="/#about" passHref>
-									<a className="text-[#fafafa]">
-										About
-									</a>
-								</Link>
+							<li className="col-4 w-auto cursor-pointer" onClick={
+								() => {
+									document.querySelector('#about').scrollIntoView({
+										behavior: 'smooth'
+									})
+								}}>
+								About
 							</li>
-							<li className="col-4 w-auto">
-								<Link href="/#skills" passHref>
-									<a className="text-[#fafafa]">
-										Skills
-									</a>
-								</Link>
+							<li className="col-4 w-auto cursor-pointer" onClick={
+								() => {
+									document.querySelector('#skills').scrollIntoView({
+										behavior: 'smooth'
+									})
+								}}>
+								Skills
 							</li>
-							<li className="col-4 w-auto">
-								<Link href="/#contact" passHref>
-									<a className="text-[#fafafa]">
-										Contact
-									</a>
-								</Link>
+							<li className="col-4 w-auto cursor-pointer" onClick={
+								() => {
+									document.querySelector('#contact').scrollIntoView({
+										behavior: 'smooth'
+									})
+								}}>
+								Contact
 							</li>
 						</ul>
 					</div>

@@ -29,12 +29,15 @@ export default function Screen() {
   const constext = useAppContext()
 
   return (
-    <div>
-      <Link href="/#about">
-        <a className="">
-          <Lottie options={constext.theme == 'dark' ? defaultOptions : defaultOptions2} height={200} width={100} />
-        </a>
-      </Link>
+    <div
+      className="cursor-pointer"
+      onClick={
+        () => {
+          document.querySelector('#about').scrollIntoView({
+            behavior: 'smooth'
+          })
+        }}>
+      <Lottie options={constext.theme == 'dark' ? defaultOptions : defaultOptions2} height={200} width={100} />
     </div>
   )
 }
