@@ -33,3 +33,17 @@
 .bg__card {
     border-radius: 12px;
 }
+
+.titlecard {
+    font-size: 18px !important;
+}
+
+@media screen and (max-width: 325px) {
+    .title_dark h1,
+    .title h1 {
+        font-size: 28px !important;
+    }
+    .titlecard {
+        font-size: 18px !important;
+    }
+}

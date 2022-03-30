@@ -67,7 +67,9 @@ export default function Project() {
               <div className="col-lg-4" key={index}>
                 <div className={`card ${styles.bg__card} ${context.theme == 'dark' ? styles.bg__card__dark : ''}`}>
                   <div className={`card-body`}>
-                    <h5 className={`card-title ${styles.titlecard} h-[80px] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}>{data.title}</h5>
+                    <h5 className={`card-title ${styles.titlecard} h-[80px] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`}>
+                      {data.title}
+                    </h5>
                     <h6 className={`flex align-items-center gap-x-2 card-description ${context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}`}>
                       <BsCalendarEvent className="w-[18px] h-[18px]" />
                       {data.date}

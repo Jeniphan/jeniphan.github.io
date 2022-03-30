@@ -23,15 +23,23 @@ export default function Animation() {
         context.setAnimation(true);
       }, 1000);
     }, 1500);
+
   }, []);
 
   return (
     <div className={context.animation ? 'hidden' : 'screen w-full'}>
+      {/* <div className="w-full"> */}
       <div className={`${context.theme == 'dark' ? 'background' : styles.background_light} w-full h-[100vh] animation`}>
-        <FadeIn className="w-full h-full row items-center">
-          <div className="col text-center w-full">
-            <h1 className={`${context.theme == 'dark' ? styles.name_dark : styles.name} animate__animated animate__bounce`}>Akiira</h1>
-            <Lottie options={defaultOptions} height={50} width={414} />
+        <FadeIn className="w-full h-full row items-center m-0">
+          <div className="col text-center w-full justify-center">
+            <h1 className={`${context.theme == 'dark' ? styles.name_dark : styles.name} animate__animated animate__bounce p-0`}>
+              Akiira
+            </h1>
+            <div className="w-full flex justify-content-center">
+              <div className={`w-[414px] ${styles.lottie}`}>
+                <Lottie options={defaultOptions} height={50} />
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>

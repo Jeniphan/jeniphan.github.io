@@ -162,8 +162,8 @@ export default function Skill() {
 
       <div className={`row w-full h-full pb-[150px] ${styles.major_content} m-0 ${checkSkill.current == 'tech' ? '' : styles.check}`}>
         <Fade left when={checkSkill.current == 'tech' ? true : false}>
-          <div className="col-lg-4 h-full flex justify-content-center">
-            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+          <div className="col-lg-4 flex justify-content-center">
+            <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h4 className="">
                   FrontEnd Developer
@@ -188,7 +188,7 @@ export default function Skill() {
           </div>
 
           <div className="col-lg-4 flex justify-content-center">
-            <div className={`w-[270px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+            <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h4 className="">
                   BackEnd Developer
@@ -212,8 +212,8 @@ export default function Skill() {
             </div>
           </div>
 
-          <div className="col-lg-4 h-full flex justify-content-center">
-            <div className={`w-[270px] ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+          <div className="col-lg-4 flex justify-content-center">
+            <div className={`${styles.card} w-[270px] h-[530px] ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h4 className="">Embaddeds and Programing</h4>
               </div>

@@ -53,7 +53,9 @@ export default function Titlecontent() {
                 Web Developer
               </h3>
               <div className="personal pt-[2rem] leading-relaxed">
-                <p>Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.</p>
+                <p>
+                  Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.
+                </p>
               </div>
             </div>
             <div className="flex justify-content-center w-full pt-[2rem]">

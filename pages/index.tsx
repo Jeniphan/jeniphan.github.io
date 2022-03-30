@@ -18,16 +18,25 @@ import Contact from '@components/contact/contact';
 const Home: NextPage = () => {
 
 	const context = useAppContext()
-	const [checkQualification, setCheckQualification] = useState({ current: context.component })
 
 	useEffect(() => {
 		const item = localStorage.getItem('theme')
+
+		const handleResize = () => {
+			context.setWindowWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', handleResize);
+
 		if (item == undefined) {
 			localStorage.setItem('theme', context.theme)
 		}
 		else (
 			context.setTheme(item == 'dark' ? 'dark' : 'light')
 		)
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
 
 	}, [])
 
@@ -81,8 +90,8 @@ const Home: NextPage = () => {
 			</Head>
 
 			<div className={`${context.theme == 'dark' ? 'bg-content' : '.bg-content-light'} content`}>
-				<div className="container pt-[70px]">
-					<div className="padding_in pr-[100px] pl-[100px]" id="profile">
+				<div className="container pt-[70px]" id="profile">
+					<div className="padding_in pr-[100px] pl-[100px]">
 						<Fade bottom when={context.animation}>
 							<Titlecontent />
 						</Fade>

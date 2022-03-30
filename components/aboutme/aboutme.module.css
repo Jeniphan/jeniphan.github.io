@@ -80,3 +80,18 @@
         height: auto;
     }
 }
+
+@media screen and (max-width:325px) {
+    .title h1,
+    .title_dark h1 {
+        font-size: 28px !important;
+    }
+    .title p,
+    .title_dark p {
+        font-size: 16px !important;
+    }
+    .header_dark h1,
+    .header h1 {
+        font-size: 28px !important;
+    }
+}

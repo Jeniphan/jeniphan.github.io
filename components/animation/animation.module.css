@@ -19,3 +19,9 @@
 .background_light {
     background-color: #b8fff9
 }
+
+@media screen and (max-width: 420px) {
+    .lottie {
+        width: 100% !important;
+    }
+}

@@ -59,3 +59,10 @@
 .card__body div {
     color: #3f3f3f6e !important;
 }
+
+@media screen and (max-width: 325px) {
+    .title_dark h1,
+    .title h1 {
+        font-size: 28px !important;
+    }
+}

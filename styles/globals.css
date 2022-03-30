@@ -207,6 +207,9 @@ textarea.ant-input {
 }
 
 @media screen and (max-width: 576px) {
+    .q_content {
+        height: auto !important;
+    }
     .icon-menu {
         height: 100%;
         width: auto;
@@ -240,8 +243,8 @@ textarea.ant-input {
     }
 }
 
-@media screen and (max-width: 320px) {
-    .content {
-        padding-top: 100px;
+@media screen and (max-width: 325px) {
+    .title_q h1 {
+        font-size: 28px !important;
     }
 }
