@@ -63,21 +63,21 @@ const Home: NextPage = () => {
 				<meta property="og:url" content="https://jeniphan.github.io/" />
 				<meta property="og:type" content="website" />
 				<meta name="theme-color" content="#ffa500" />
-				<meta property="og:image" content="/image/SEO__Jetniphan.png" />
+				<meta property="og:image" content="https://jeniphan.github.io/image/SEO__Jetniphan.png" />
 				< meta property="fb:app_id" content="1137762390349813" />
 
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
 				<meta property="twitter:card" content="summary_large_image" />
-				<meta property="twitter:image" content="/image/SEO__Jetniphan.png" />
+				<meta property="twitter:image" content="https://jeniphan.github.io/image/SEO__Jetniphan.png" />
 				<meta property="twitter:url" content="https://jeniphan.github.io/" />
 				<meta property="twitter:title" content="Jetniphan Pukkham-@All about me." />
 				<meta
 					property="twitter:description"
 					content="Hello my name is Jetniphan Pukkham. I'am FrontEnd Developer. This all about for me."
 				/>
-				<meta name="twitter:site" content="@Akiira" />
-				< meta name="twitter:creator" content="@Akiira" />
+				<meta name="twitter:site" content="@Jnpk_" />
+				<meta name="twitter:creator" content="@Jnpk_" />
 
 				<meta
 					name="keywords"
@@ -100,7 +100,6 @@ const Home: NextPage = () => {
 					<div className="twocontent row w-full m-0 pr-[100px] pl-[100px]" id="about">
 						<Aboutme />
 					</div>
-
 
 					<div id="educations">
 						<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-[100vh] pt-[70px]" id="works">
