@@ -32,11 +32,11 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'Angular Framwork',
+      title: 'Angular Framework',
       discription: 'Intermediate'
     },
     {
-      title: 'NextJS Framwork',
+      title: 'NextJS Framework',
       discription: 'Intermediate'
     }
   ]
@@ -55,7 +55,7 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'NestJS Framwork',
+      title: 'NestJS Framework',
       discription: 'Intermediate'
     },
     {
@@ -166,7 +166,7 @@ export default function Skill() {
             <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h4 className="">
-                  FrontEnd Developer
+                  Front-End Developer
                 </h4>
               </div>
               <div className="content_front p-[1rem]">
@@ -191,7 +191,7 @@ export default function Skill() {
             <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h4 className="">
-                  BackEnd Developer
+                  Back-End Developer
                 </h4>
               </div>
               <div className="content_back p-[1rem]">

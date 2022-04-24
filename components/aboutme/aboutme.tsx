@@ -5,7 +5,7 @@ import { BsFillArrowDownLeftCircleFill } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context';
 
 export default function Aboutme() {
-  const text = `Hello. My name is Jetniphan Pukkham, everyone call me Jaay. I'm studying at King Mongkut's University of Technology Thonburi. My major was Electronic and Telecommunication Engineer. I'm interested about Web Development.`;
+  const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jaay. I'm studying at King Mongkut's University of Technology Thonburi. My major was Electronic and Telecommunication Engineering. I'm interested about Web Development.`;
 
   const context = useAppContext()
   return (
@@ -25,9 +25,9 @@ export default function Aboutme() {
         <div className={`${styles.content} col-lg-6`}>
           <div className={`${context.theme == 'dark' ? styles.header_dark : styles.header} gap-4`}>
             <h1>Jetniphan Pukkham</h1>
-            <Tag color="blue">FrontEnd</Tag>
-            <Tag color="blue">BackEnd</Tag>
-            <Tag color="blue">FullStack</Tag>
+            <Tag color="blue">Front-End</Tag>
+            <Tag color="blue">Back-End</Tag>
+            <Tag color="blue">Full Stack</Tag>
           </div>
           <div className={`${context.theme == 'dark' ? styles.text_dark : styles.text} pt-[1rem] leading-relaxed text-[14px]`}>
             <p>{text}</p>

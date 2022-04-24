@@ -69,7 +69,7 @@ export default function Titlecontent() {
                     })
                   }}
                 >
-                  Contactme
+                  Contact me
                 </Button>
               </div>
             </div>

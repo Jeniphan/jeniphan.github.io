@@ -8,7 +8,7 @@ export default function Work() {
   const context = useAppContext();
   const work = [
     {
-      year: 'Jun 1st, 2021s - Nov 30th, 2021s',
+      year: 'Jun 1st, 2021 - Nov 30th, 2021',
       name: "TOYOTA TSUSHO DENSO ELECTRONIC(THAILAND)Co.,Ltd.",
       major: 'Software Engineer Intern.',
       link: 'https://www.denso.com/th/th/about-us/company-information/tdet/'

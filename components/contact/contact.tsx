@@ -78,7 +78,7 @@ export default function Contact() {
                 <div className="flex justify-content-center w-full mb-[5px]">
                   <MdEmail className="w-[2rem] h-[2rem]" />
                 </div>
-                <h3>Jeni.pukkham@gamil.com</h3>
+                <h3>Jeni.pukkham@gmail.com</h3>
                 <a href="https://mail.google.com/mail/u/0/?view=cm&ui=2&tf=0&fs=1&to=jeni.pukkham@gmail.com"
                   className=""
                   target="_blank" rel="noopener noreferrer">

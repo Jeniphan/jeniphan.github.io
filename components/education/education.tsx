@@ -9,19 +9,19 @@ export default function Education() {
 
   const education = [
     {
-      year: 'Aprill, 2018s - Present',
+      year: 'Aprill, 2018 - Present',
       name: "King Mongkut's University of Technology Thonburi.",
       major: 'Electronic and Telecommunication Dept.',
       link: 'https://www.kmutt.ac.th/'
     },
     {
-      year: '2015s - 2018s',
+      year: '2015 - 2018',
       name: 'Soemngam Witthayakhom School.',
       major: 'Sciences and Mathematics Program.',
       link: 'http://swt.ac.th/'
     },
     {
-      year: '2013s - 2015s',
+      year: '2013 - 2015',
       name: 'Soemngam Witthayakhom School.',
       major: 'Junior high school.',
       link: 'http://swt.ac.th/'
