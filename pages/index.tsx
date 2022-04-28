@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 				<meta property="og:type" content="website" />
 				<meta name="theme-color" content="#ffa500" />
 				<meta property="og:image" content="https://jeniphan.github.io/image/SEO__Jetniphan.png" />
-				< meta property="fb:app_id" content="1137762390349813" />
+				<meta property="fb:app_id" content="1137762390349813" />
 
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
@@ -87,6 +87,7 @@ const Home: NextPage = () => {
 				/>
 
 				<link rel="icon" href="/favicon.png" />
+
 			</Head>
 
 			<div className={`${context.theme == 'dark' ? 'bg-content' : '.bg-content-light'} content`}>
