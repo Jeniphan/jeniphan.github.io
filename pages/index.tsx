@@ -10,7 +10,7 @@ import Project from '@components/projects/project';
 
 import Fade from 'react-reveal/Fade';
 import { Menu } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppContext } from '@hooks/context';
 import Contact from '@components/contact/contact';
 
@@ -50,6 +50,8 @@ const Home: NextPage = () => {
 		<>
 			<Head>
 				<title>Jetniphan Pukkham-@All about me.</title>
+				<meta httpEquiv="content-language" content="en-us" />
+				<meta name="robots" content="follow" />
 				<meta
 					name="description"
 					content="Hello my name is Jetniphan Pukkham. I'am FrontEnd Developer. This all about for me."
@@ -90,7 +92,7 @@ const Home: NextPage = () => {
 
 			</Head>
 
-			<div className={`${context.theme == 'dark' ? 'bg-content' : '.bg-content-light'} content`}>
+			<div className={`${context.theme == 'dark' ? 'bg-content' : 'bg-content-light'} content`}>
 				<div className="container pt-[70px]" id="profile">
 					<div className="padding_in pr-[100px] pl-[100px]">
 						<Fade bottom when={context.animation}>

@@ -140,6 +140,15 @@ h2 {
     color: #3f3f3f;
 }
 
+.result404 div.ant-result-title {
+    color: #ffffff !important;
+}
+
+.result404-light div.ant-result-title,
+.result404-light div.ant-result-subtitle {
+    color: #3f3f3f !important;
+}
+
 .title_q h1 {
     font-family: 'JetBrainsMono-Bold';
     font-size: 36px;

@@ -33,7 +33,7 @@ export default function Aboutme() {
             <p>{text}</p>
           </div>
           <div className="button w-full flex flex justify-content-center pt-[2rem]">
-            <a href="/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
+            <a href="https://jeniphan.github.io/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
               <Button className={`${styles.button_text}`}
                 type="primary"
                 shape="round"
