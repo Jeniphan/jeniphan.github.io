@@ -52,12 +52,12 @@ export default function Project() {
   return (
     <div className={`${styles.project} w-full ${showMore ? 'h-auto pb-[100px]' : 'h-auto pb-[100px]'} pt-[70px]  overflow-hidden m-0`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
-        <h1>
+        <h2>
           Projects
-        </h1>
-        <p>
+        </h2>
+        <span>
           My technical projects
-        </p>
+        </span>
       </div>
 
       <div className="projectcontent pt-[50px] w-full">

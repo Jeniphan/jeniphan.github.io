@@ -107,12 +107,12 @@ const Home: NextPage = () => {
 					<div id="educations">
 						<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-[100vh] pt-[70px]" id="works">
 							<div className="title_q text-center">
-								<h1 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
+								<h2 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
 									Qualification
-								</h1>
-								<p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>
+								</h2>
+								<span className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>
 									My personal journey
-								</p>
+								</span>
 							</div>
 
 							<div className={`${context.theme == 'dark' ? 'menu_q_dark' : 'menu_q_light'} mt-[100px]`}>

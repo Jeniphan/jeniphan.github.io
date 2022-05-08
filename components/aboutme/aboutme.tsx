@@ -11,8 +11,8 @@ export default function Aboutme() {
   return (
     <div className={`${styles.about} w-full row justify-content-center pt-[100px] pb-[100px] m-0`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
-        <h1>About me</h1>
-        <p>Personal Profile</p>
+        <h2>About me</h2>
+        <span>Personal Profile</span>
       </div>
 
       <div className="row gap-y-5">
@@ -24,7 +24,7 @@ export default function Aboutme() {
 
         <div className={`${styles.content} col-lg-6`}>
           <div className={`${context.theme == 'dark' ? styles.header_dark : styles.header} gap-4`}>
-            <h1>Jetniphan Pukkham</h1>
+            <h3>Jetniphan Pukkham</h3>
             <Tag color="blue">Front-End</Tag>
             <Tag color="blue">Back-End</Tag>
             <Tag color="blue">Full Stack</Tag>

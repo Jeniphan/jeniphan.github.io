@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.title h1 {
+.hi_class {
     /* color: #fafafa; */
     font-family: 'JetBrainsMono-Bold';
     font-size: 24px;
@@ -12,9 +12,10 @@
 .title h2 {
     /* color: #fafafa; */
     font-family: 'JetBrainsMono-Bold';
+    font-size: 30px;
 }
 
-.title h3 {
+.web_class {
     font-size: 16px;
     /* color: #fafafa6e; */
     font-family: 'JetBrainsMono-Bold';

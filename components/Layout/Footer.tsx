@@ -11,8 +11,8 @@ const Footer: FC = () => {
 			<div className="container w-full h-full">
 				<div className="row align-items-center h-full">
 					<div className="col-md-4 title-footer">
-						<h1>Akiira</h1>
-						<h2>Web-developer</h2>
+						<h2>Akiira</h2>
+						<span>Web-developer</span>
 					</div>
 
 					<div className="col-md-4">

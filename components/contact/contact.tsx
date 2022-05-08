@@ -34,12 +34,12 @@ export default function Contact() {
   return (
     <div className={`${styles.contact} w-full pt-[70px] h-auto overflow-hidden m-0 pb-[70px]`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
-        <h1>
+        <h2>
           Contact me
-        </h1>
-        <p>
+        </h2>
+        <span>
           Get in touch
-        </p>
+        </span>
       </div>
 
       <div className="row pt-[20px]">

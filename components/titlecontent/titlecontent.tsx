@@ -4,7 +4,6 @@ import { BsFacebook, BsLinkedin, BsGithub, BsMailbox2 } from 'react-icons/bs'
 import { Button } from 'antd';
 import Screen from '@components/animation/screen';
 import { useAppContext } from '@hooks/context';
-import Link from 'next/link';
 
 export default function Titlecontent() {
 
@@ -43,15 +42,15 @@ export default function Titlecontent() {
           </div>
           <div className="col-lg-5 gap-3">
             <div className={`${styles.title} ${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
-              <h1 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
+              <span className={`${styles.hi_class} ${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
                 Hi&apos; I am
-              </h1>
+              </span>
               <h2 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
                 Jaay Jetniphan
               </h2>
-              <h3 className={`${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
+              <span className={`${styles.web_class} ${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
                 Web Developer
-              </h3>
+              </span>
               <div className="personal pt-[2rem] leading-relaxed">
                 <p>
                   Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.

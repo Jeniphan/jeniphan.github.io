@@ -135,12 +135,12 @@ export default function Skill() {
   return (
     <div className={`${styles.skill} w-full h-[100vh] pt-[70px] m-0 overflow-hidden`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
-        <h1>
+        <h2>
           Skills
-        </h1>
-        <p>
+        </h2>
+        <span>
           My technical level
-        </p>
+        </span>
       </div>
 
       <div className={`${context.theme == 'dark' ? styles.menu_skill_dark : styles.menu_skill_light} mt-[20px]`}>
@@ -165,18 +165,18 @@ export default function Skill() {
           <div className="col-lg-4 flex justify-content-center">
             <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
-                <h4 className="">
+                <h3 className="">
                   Front-End Developer
-                </h4>
+                </h3>
               </div>
               <div className="content_front p-[1rem]">
                 {frontend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}>
+                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
                         <HiBadgeCheck className="w-[18px] h-[18px]" />
                         {data.title}
-                      </h6>
+                      </h4>
                       <p className={`pl-[1.5rem] text-[#fafafa6e] }`}>
                         {data.discription}
                       </p>
@@ -190,18 +190,18 @@ export default function Skill() {
           <div className="col-lg-4 flex justify-content-center">
             <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
-                <h4 className="">
+                <h3 className="">
                   Back-End Developer
-                </h4>
+                </h3>
               </div>
               <div className="content_back p-[1rem]">
                 {backend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}>
+                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
                         <HiBadgeCheck className="w-[18px] h-[18px]" />
                         {data.title}
-                      </h6>
+                      </h4>
                       <p className={`pl-[1.5rem] text-[#fafafa6e]`} >
                         {data.discription}
                       </p>
@@ -215,16 +215,16 @@ export default function Skill() {
           <div className="col-lg-4 flex justify-content-center">
             <div className={`${styles.card} w-[270px] h-[530px] ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
-                <h4 className="">Embaddeds and Programing</h4>
+                <h3 className="">Embaddeds and Programing</h3>
               </div>
               <div className="content_embad p-[1rem]">
                 {embaddeds.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}>
+                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
                         <HiBadgeCheck className="w-[18px] h-[18px]" />
                         {data.title}
-                      </h6>
+                      </h4>
                       <p className={`pl-[1.5rem] text-[#fafafa6e]`}>
                         {data.discription}
                       </p>
@@ -242,18 +242,18 @@ export default function Skill() {
           <div className="col-lg flex justify-content-center">
             <div className={`w-auto p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
-                <h4 className="">
+                <h3 className="">
                   Soft Skills
-                </h4>
+                </h3>
               </div>
               <div className="content_soft p-[1rem]">
                 {softskills.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h6 className={`flex align-items-center gap-2 text-[#fafafa]`}>
+                      <h4 className={`flex align-items-center gap-2 text-[#fafafa] text-[16px]`}>
                         <HiBadgeCheck className="w-[18px] h-[18px]" />
                         {data.title}
-                      </h6>
+                      </h4>
                       <p className={`pl-[1.5rem] text-[#fafafa6e]`}>
                         {data.discription}
                       </p>

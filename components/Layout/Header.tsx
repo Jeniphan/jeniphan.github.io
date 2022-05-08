@@ -117,14 +117,14 @@ const Header: FC = () => {
 				<div className="row align-items-center h-100 w-100">
 
 					<div className="title-text col-md flex justify-content-between">
-						<h1 onClick={() => {
+						<h2 onClick={() => {
 							document.querySelector('#profile').scrollIntoView({
 								behavior: 'smooth'
 							})
 						}}
 						>
 							Akiira
-						</h1>
+						</h2>
 						<div className="menu col-md">
 							<Dropdown overlay={menu} placement="bottomRight" arrow className="background">
 								<Button className="botton-menu">

@@ -1,4 +1,4 @@
-.title_dark h1 {
+.title_dark h2 {
     padding: 0;
     font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
@@ -7,7 +7,7 @@
     color: #fafafa !important;
 }
 
-.title h1 {
+.title h2 {
     color: #3f3f3f;
     padding: 0;
     font-family: 'JetBrainsMono-Bold';
@@ -16,22 +16,22 @@
     font-weight: 600 !important;
 }
 
-.title_dark p {
+.title_dark span {
     color: #fafafa6e;
     font-size: 16px;
 }
 
-.title p {
+.title span {
     color: #3f3f3f6e;
     font-size: 16px;
 }
 
-.hedder h4 {
+.hedder h3 {
     color: #fafafa;
     font-size: 18px
 }
 
-.hedder_light h4 {
+.hedder_light h3 {
     color: #3f3f3f;
     font-size: 18px
 }
@@ -90,8 +90,8 @@
 }
 
 @media screen and (max-width: 320px) {
-    .title_dark h1,
-    .title h1 {
+    .title_dark h2,
+    .title h2 {
         font-size: 28px!important;
     }
 }

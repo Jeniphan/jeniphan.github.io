@@ -39,7 +39,7 @@ h2 {
     color: #fafafa;
 }
 
-.title-text h1 {
+.title-text h2 {
     padding-left: 10px;
     font-family: 'JetBrainsMono-Bold';
     margin-bottom: 0;
@@ -94,7 +94,7 @@ h2 {
     color: #fafafafa;
 }
 
-.title-footer h1 {
+.title-footer h2 {
     font-family: 'JetBrainsMono-Bold';
     padding-left: 17px;
     color: #fafafafa;
@@ -102,7 +102,7 @@ h2 {
     font-weight: 700;
 }
 
-.title-footer h2 {
+.title-footer span {
     /* font-family: 'Monoid-Bold'; */
     color: #fafafafa;
     font-size: 16px;
@@ -149,13 +149,13 @@ h2 {
     color: #3f3f3f !important;
 }
 
-.title_q h1 {
+.title_q h2 {
     font-family: 'JetBrainsMono-Bold';
     font-size: 36px;
     margin-bottom: 0;
 }
 
-.title_q p {
+.title_q span {
     font-size: 16px;
 }
 
@@ -225,7 +225,7 @@ textarea.ant-input {
         font-size: 24px;
         color: #fafafafa !important;
     }
-    .title-footer h1 {
+    .title-footer h2 {
         text-align: center;
         padding: 0;
     }
@@ -253,7 +253,7 @@ textarea.ant-input {
 }
 
 @media screen and (max-width: 325px) {
-    .title_q h1 {
+    .title_q h2 {
         font-size: 28px !important;
     }
 }
