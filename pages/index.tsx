@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Jetniphan Pukkham-@All about me.</title>
+				<title>Jetniphan Pukkham - @All about Akiira.</title>
 				<meta httpEquiv="content-language" content="en-us" />
 				<meta name="robots" content="follow" />
 				<meta
