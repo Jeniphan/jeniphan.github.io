@@ -11,7 +11,7 @@ const Layout: FC = ({ children }) => {
 		<>
 			<div className="children">
 				<Animation />
-				<div className={context.animation ? '' : 'hidden'}>
+				<div>
 					<Header />
 					{children}
 					<Footer />

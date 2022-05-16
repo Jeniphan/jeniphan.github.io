@@ -10,7 +10,7 @@ const Footer: FC = () => {
 		<div className={`h-[220px] footer ${context.theme == 'dark' ? 'background' : 'bg-primary'}`}>
 			<div className="container w-full h-full">
 				<div className="row align-items-center h-full">
-					<div className="col-md-4 title-footer">
+					<div className="col-md-4 title-footer text-center">
 						<h2>Akiira</h2>
 						<span>Web-developer</span>
 					</div>

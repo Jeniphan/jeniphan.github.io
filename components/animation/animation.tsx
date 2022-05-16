@@ -18,8 +18,10 @@ export default function Animation() {
   const context = useAppContext()
 
   useEffect(() => {
+    document.body.classList.add('max-h-screen', 'overflow-hidden')
     setTimeout(() => {
       setTimeout(() => {
+        document.body.classList.remove('max-h-screen', 'overflow-hidden')
         context.setAnimation(true);
       }, 1000);
     }, 1500);
