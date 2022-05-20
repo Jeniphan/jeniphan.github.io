@@ -83,9 +83,9 @@ const Home: NextPage = () => {
 
 				<meta
 					name="keywords"
-					content="akiira, Akiira, akira, Akiira, akiira.online, akiira about, jaay jetniphan, Jaay, Jay, Jaay Jetniphan, 
+					content="jaay jetniphan, Jaay, Jay, Jaay Jetniphan, 
 					Jeniphan Pukkham, Jetniphan, Jeniphan, Jeniphan Pukkham, Jaay Jeniphan, jaay jeniphan, Jeni, jeni,
-					web, web developer, front end, frontend, front-end, frontend developer, frontend dev, full-stack, full stack, dev"
+					web, web developer, front end, frontend, front-end, frontend developer, frontend dev, full-stack, full stack, devมakiira, Akiira, akira, Akiira, akiira.online, akiira about"
 				/>
 
 				<link rel="icon" href="/favicon.png" />
