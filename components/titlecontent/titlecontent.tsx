@@ -45,9 +45,9 @@ export default function Titlecontent() {
               <span className={`${styles.hi_class} ${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
                 Hi&apos; I am
               </span>
-              <h2 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
+              <h1 className={`${context.theme == 'dark' ? "text-[#fafafa]" : "text-[#3f3f3f]"}`}>
                 Jaay Jetniphan
-              </h2>
+              </h1>
               <span className={`${styles.web_class} ${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
                 Web Developer
               </span>
