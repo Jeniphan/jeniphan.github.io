@@ -32,8 +32,8 @@ export default function Aboutme() {
           <div className={`${context.theme == 'dark' ? styles.text_dark : styles.text} pt-[1rem] leading-relaxed text-[14px]`}>
             <p>{text}</p>
           </div>
-          <div className="button w-full flex flex justify-content-center pt-[2rem]">
-            <a href="https://jeniphan.github.io/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
+          <div className="button w-full flex justify-content-center pt-[2rem]">
+            <a href="https://akiira.online/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
               <Button className={`${styles.button_text}`}
                 type="primary"
                 shape="round"
