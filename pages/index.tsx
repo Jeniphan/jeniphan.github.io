@@ -105,7 +105,7 @@ const Home: NextPage = () => {
 					</div>
 
 					<div id="educations">
-						<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-[100vh] pt-[70px]" id="works">
+						<div className="q_content w-full m-0 pr-[100px] pl-[100px] h-full pt-[70px]" id="works">
 							<div className="title_q text-center">
 								<h2 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>
 									Qualification

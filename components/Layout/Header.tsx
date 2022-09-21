@@ -134,7 +134,7 @@ const Header: FC = () => {
 						</div>
 					</div>
 
-					<div className="col-md w-full nav-header">
+					<div className="col-md w-full">
 						<Menu onClick={
 							(e) => {
 								document.querySelector(e.key).scrollIntoView({
@@ -146,7 +146,7 @@ const Header: FC = () => {
 							selectedKeys={[current]}
 							mode="horizontal"
 							theme={context.theme}
-							className="flex justify-content-center">
+							className={`flex justify-content-center ${context.theme == 'dark' ? 'background' : 'bg-primary text-white'}`}>
 							<SubMenu key="#SubMenu" title="Profile">
 								<Menu.ItemGroup title="Table of content">
 									<Menu.Item key="#profile">Profile</Menu.Item>

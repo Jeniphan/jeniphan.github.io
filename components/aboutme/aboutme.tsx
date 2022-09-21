@@ -5,7 +5,7 @@ import { BsFillArrowDownLeftCircleFill } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context';
 
 export default function Aboutme() {
-  const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jaay. I'm studying at King Mongkut's University of Technology Thonburi. My major was Electronic and Telecommunication Engineering. I'm interested about Web Development.`;
+  const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jay. Bachelor of Enginering in Electronic and Telecommunication Engineering at King Mongkut's University of Technology Thonburi. I'm interested about Web Development.`;
 
   const context = useAppContext()
   return (

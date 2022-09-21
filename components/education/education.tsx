@@ -9,7 +9,7 @@ export default function Education() {
 
   const education = [
     {
-      year: 'Aprill, 2018 - Present',
+      year: 'Aprill, 2018 - Aprill, 2022',
       name: "King Mongkut's University of Technology Thonburi.",
       major: 'Electronic and Telecommunication Dept.',
       link: 'https://www.kmutt.ac.th/'

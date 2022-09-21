@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="pb-[1rem]">
             <div className={`card ${styles.bg__card} ${context.theme == 'dark' ? styles.bg__card__dark : ''}`}>
               <div className={`${context.theme == 'dark' ? styles.card__body__dark : styles.card__body} card-body text-center`}>
-                <div className="flex justify-content-center w-full mb-[5px]">
+                <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsFacebook className="w-[2rem] h-[2rem]" />
                 </div>
                 <h3>Jeniphan Pukkham</h3>
@@ -61,7 +61,7 @@ export default function Contact() {
           <div className="pb-[1rem]">
             <div className={`card ${styles.bg__card} ${context.theme == 'dark' ? styles.bg__card__dark : ''}`}>
               <div className={`${context.theme == 'dark' ? styles.card__body__dark : styles.card__body} card-body text-center`}>
-                <div className="flex justify-content-center w-full mb-[5px]">
+                <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsLinkedin className="w-[2rem] h-[2rem]" />
                 </div>
                 <h3>Jetniphan Pukkham</h3>
@@ -75,7 +75,7 @@ export default function Contact() {
           <div className="pb-[1rem]">
             <div className={`card ${styles.bg__card} ${context.theme == 'dark' ? styles.bg__card__dark : ''}`}>
               <div className={`${context.theme == 'dark' ? styles.card__body__dark : styles.card__body} card-body text-center`}>
-                <div className="flex justify-content-center w-full mb-[5px]">
+                <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <MdEmail className="w-[2rem] h-[2rem]" />
                 </div>
                 <h3>Jeni.pukkham@gmail.com</h3>
@@ -91,7 +91,7 @@ export default function Contact() {
           <div className="pb-[1rem]">
             <div className={`card ${styles.bg__card} ${context.theme == 'dark' ? styles.bg__card__dark : ''}`}>
               <div className={`${context.theme == 'dark' ? styles.card__body__dark : styles.card__body} card-body text-center`}>
-                <div className="flex justify-content-center w-full mb-[5px]">
+                <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsFillTelephoneFill className="w-[2rem] h-[2rem]" />
                 </div>
                 <h3>080-915-3786</h3>
