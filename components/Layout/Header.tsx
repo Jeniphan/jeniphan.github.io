@@ -134,7 +134,7 @@ const Header: FC = () => {
 						</div>
 					</div>
 
-					<div className="col-md w-full">
+					<div className="col-md w-full menudesktop">
 						<Menu onClick={
 							(e) => {
 								document.querySelector(e.key).scrollIntoView({

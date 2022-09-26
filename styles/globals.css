@@ -191,6 +191,9 @@ textarea.ant-input {
 }
 
 @media screen and (max-width: 992px) {
+	.menudesktop {
+		display: none;
+	}
 	.nav-header,
 	.switch {
 		display: none;
