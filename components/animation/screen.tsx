@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import screenData from './screen.json'
 import screenData2 from './screen-light.json'
 
@@ -27,6 +27,8 @@ export default function Screen() {
   };
 
   const constext = useAppContext()
+
+  // constext.setDataAPI(dataApi)
 
   return (
     <div

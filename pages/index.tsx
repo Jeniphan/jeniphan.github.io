@@ -40,6 +40,8 @@ const Home: NextPage = () => {
 
 	}, [])
 
+
+
 	const handleClick = (e) => {
 		context.setComponent({ current: e });
 	};

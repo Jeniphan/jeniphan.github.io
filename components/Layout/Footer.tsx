@@ -6,6 +6,10 @@ import Link from 'next/link'
 
 const Footer: FC = () => {
 	const context = useAppContext()
+	const year = new Date().getFullYear();
+
+	// console.log("new date >>>>>> ", year);
+
 	return (
 		<div className={`h-[220px] footer ${context.theme == 'dark' ? 'background' : 'bg-primary'}`}>
 			<div className="container w-full h-full">
@@ -71,7 +75,7 @@ const Footer: FC = () => {
 				</div>
 			</div>
 			<p className={`credit text-center ${context.theme == 'dark' ? 'background' : 'bg-primary text-[#fafafa]'}`}>
-				Copyright © 2022 Jetniphan Pukkham. All right reserved.
+				Copyright © {year} Jetniphan Pukkham. All right reserved.
 			</p>
 		</div>
 	)

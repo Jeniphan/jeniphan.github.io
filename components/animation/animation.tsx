@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 import * as loadingData from "@components/animation/loading.json";
 import { useAppContext } from '@hooks/context';
 import styles from './animation.module.css'
+import Custom404 from 'pages/404';
 
 export default function Animation() {
   const defaultOptions = {
