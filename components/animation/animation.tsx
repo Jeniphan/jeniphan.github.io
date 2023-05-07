@@ -5,6 +5,8 @@ import * as loadingData from "@components/animation/loading.json";
 import { useAppContext } from '@hooks/context';
 import styles from './animation.module.css'
 import Custom404 from 'pages/404';
+import { HttpService } from 'service/api.service';
+import router from 'next/router';
 
 export default function Animation() {
   const defaultOptions = {
@@ -15,16 +17,40 @@ export default function Animation() {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
+  const httpService = new HttpService()
 
   const context = useAppContext()
 
   useEffect(() => {
     document.body.classList.add('max-h-screen', 'overflow-hidden')
+
+
+
     setTimeout(() => {
-      setTimeout(() => {
-        document.body.classList.remove('max-h-screen', 'overflow-hidden')
-        context.setAnimation(true);
-      }, 1000);
+      const url = "api/users/UserInfo?id=532b13b5-3ebb-465d-a29a-2d9036fd2fab"
+      httpService.get(url).then((res: any) => {
+        if (!res.result) {
+          console.log(res);
+          setTimeout(() => {
+            document.body.classList.remove('max-h-screen', 'overflow-hidden')
+            context.setAnimation(true);
+          }, 1000);
+        }
+        else {
+          router.push('/404');
+          setTimeout(() => {
+            document.body.classList.remove('max-h-screen', 'overflow-hidden')
+            context.setAnimation(true);
+          }, 1000);
+        }
+      }).catch((err) => {
+        router.push('/404');
+        setTimeout(() => {
+          document.body.classList.remove('max-h-screen', 'overflow-hidden')
+          context.setAnimation(true);
+        }, 1000);
+        console.log("error fetch", err);
+      })
     }, 1500);
 
   }, []);

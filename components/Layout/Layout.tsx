@@ -8,29 +8,29 @@ import { HttpService } from 'service/api.service'
 
 const Layout: FC = ({ children }) => {
 	const context = useAppContext();
-	const httpService = new HttpService()
+	// const httpService = new HttpService()
 
 	let IsfetchSuccess = false;
 
 	// useEffect(() => {
-	// 	const url = `https://my-websit.akiira.site/api/profiles/GetProfile?id=ce89ff0c-ad47-4465-a5dd-78dc97c5f850`;
-	// 	httpService.get(url).then((res) => {
-	// 		if (res) {
-	// 			console.log(res);
-	// 		}
-	// 	})
+	// 	const url = "api/users/UserInfo?id=532b13b5-3ebb-465d-a29a-2d9036fd2fab"
+	// httpService.get(url).then((res) => {
+	// 	if (res) {
+	// 		console.log(res);
+	// 	}
+	// })
 	// }, [])
 
 	return (
 		<>
 			<div className="children">
-				<Animation />
 				<div>
+					<Animation />
 					<Header />
 					{children}
-					{/* <Custom404></Custom404> */}
 					<Footer />
 				</div>
+				{/* <Custom404></Custom404> */}
 			</div>
 		</>
 	)
