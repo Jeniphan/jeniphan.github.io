@@ -4,6 +4,7 @@ import styles from './skill.module.css'
 import { HiBadgeCheck } from "react-icons/hi";
 import { Menu } from 'antd';
 import Fade from 'react-reveal/Fade';
+import { AiOutlineUnorderedList } from 'react-icons/ai';
 
 export default function Skill() {
   const context = useAppContext();
@@ -24,11 +25,11 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'CSS',
+      title: 'CSS & SCSS',
       discription: 'Intermediate'
     },
     {
-      title: 'Bootstrap',
+      title: 'Bootstrap & Tailwind',
       discription: 'Intermediate'
     },
     {
@@ -37,6 +38,10 @@ export default function Skill() {
     },
     {
       title: 'NextJS Framework',
+      discription: 'Intermediate'
+    },
+    {
+      title: 'VueJs Framework',
       discription: 'Intermediate'
     }
   ]
@@ -51,7 +56,7 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'Express',
+      title: 'Express & Fastify',
       discription: 'Intermediate'
     },
     {
@@ -59,16 +64,20 @@ export default function Skill() {
       discription: 'Intermediate'
     },
     {
-      title: 'MySQL',
+      title: 'MySQL & SQL',
       discription: 'Intermediate'
     },
     {
-      title: 'GCP',
-      discription: 'Basic'
+      title: 'GCP, Nginx, Linux Server',
+      discription: 'Intermediate'
     }, ,
     {
       title: 'Firebase',
       discription: 'Basic'
+    },
+    {
+      title: '.Net CORE & Framework',
+      discription: 'Intermediate'
     },
   ]
 
@@ -93,7 +102,6 @@ export default function Skill() {
       title: 'C++',
       discription: 'Basic'
     },
-    ,
     {
       title: 'Python',
       discription: 'Basic'
@@ -162,8 +170,8 @@ export default function Skill() {
 
       <div className={`row w-full h-full pb-[150px] ${styles.major_content} m-0 ${checkSkill.current == 'tech' ? '' : styles.check}`}>
         <Fade left when={checkSkill.current == 'tech' ? true : false}>
-          <div className="col-lg-4 flex justify-content-center">
-            <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+          <div className="col-lg-4 flex justify-content-center" style={{ 'height': 'unset !important' }}>
+            <div className={`${styles.card} w-[270px] m-h-full p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h3 className="">
                   Front-End Developer
@@ -173,13 +181,20 @@ export default function Skill() {
                 {frontend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
-                        <HiBadgeCheck className="w-[18px] h-[18px]" />
-                        {data.title}
-                      </h4>
-                      <p className={`pl-[1.5rem] text-[#fafafa6e] }`}>
-                        {data.discription}
-                      </p>
+                      <div className="gap-3 flex">
+                        <span>
+                          <HiBadgeCheck className="w-[18px] h-[18px]" />
+                        </span>
+                        <div>
+                          <h4 className={`text-[16px] text-[#fafafa]`}>
+                            {data.title}
+                          </h4>
+                          <p className={`text-[#fafafa6e] }`}>
+                            {data.discription}
+                          </p>
+                        </div>
+                      </div>
+
                     </div>
                   )
                 })}
@@ -187,8 +202,8 @@ export default function Skill() {
             </div>
           </div>
 
-          <div className="col-lg-4 flex justify-content-center">
-            <div className={`${styles.card} w-[270px] h-[530px] p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+          <div className="col-lg-4 flex justify-content-center" style={{ 'height': 'unset !important' }}>
+            <div className={`${styles.card} w-[270px] m-h-full p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h3 className="">
                   Back-End Developer
@@ -198,13 +213,20 @@ export default function Skill() {
                 {backend.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
-                        <HiBadgeCheck className="w-[18px] h-[18px]" />
-                        {data.title}
-                      </h4>
-                      <p className={`pl-[1.5rem] text-[#fafafa6e]`} >
-                        {data.discription}
-                      </p>
+                      <div className='flex gap-3'>
+                        <span>
+                          <HiBadgeCheck className="w-[18px] h-[18px]" />
+                        </span>
+                        <div>
+                          <h4 className={`text-[16px] text-[#fafafa]`}>
+                            {data.title}
+                          </h4>
+                          <p className={`text-[#fafafa6e]`} >
+                            {data.discription}
+                          </p>
+
+                        </div>
+                      </div>
                     </div>
                   )
                 })}
@@ -212,8 +234,8 @@ export default function Skill() {
             </div>
           </div>
 
-          <div className="col-lg-4 flex justify-content-center">
-            <div className={`${styles.card} w-[270px] h-[530px] ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
+          <div className="col-lg-4 flex justify-content-center" style={{ 'height': 'unset !important' }}>
+            <div className={`${styles.card} w-[270px] m-h-full ${styles.h__em} p-[1rem] rounded-xl drop-shadow-lg ${context.theme == 'dark' ? 'bg-[#064663]' : 'bg-primary'}`}>
               <div className={`${styles.hedder}`}>
                 <h3 className="">Embaddeds and Programing</h3>
               </div>
@@ -221,13 +243,20 @@ export default function Skill() {
                 {embaddeds.map((data, index) => {
                   return (
                     <div className="" key={index}>
-                      <h4 className={`text-[16px] flex align-items-center gap-2 text-[#fafafa]`}>
-                        <HiBadgeCheck className="w-[18px] h-[18px]" />
-                        {data.title}
-                      </h4>
-                      <p className={`pl-[1.5rem] text-[#fafafa6e]`}>
-                        {data.discription}
-                      </p>
+                      <div className="flex gap-3">
+                        <span>
+                          <HiBadgeCheck className="w-[18px] h-[18px]" />
+                        </span>
+                        <div>
+                          <h4 className={`text-[16px] text-[#fafafa]`}>
+                            {data.title}
+                          </h4>
+                          <p className={`text-[#fafafa6e]`}>
+                            {data.discription}
+                          </p>
+
+                        </div>
+                      </div>
                     </div>
                   )
                 })}

@@ -5,7 +5,7 @@ import { BsFillArrowDownLeftCircleFill } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context';
 
 export default function Aboutme() {
-  const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jay. Bachelor of Enginering in Electronic and Telecommunication Engineering at King Mongkut's University of Technology Thonburi. I'm interested about Web Development.`;
+  const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jay. Graduating from King Mongkut's University of Technology Thonburi. Major as Electronic and Telecommunication Engineering. I work as a Full Stack Developer and have been working here for few year now. I’ve always wanted to improve my Coding so I interested about new Technology.`;
 
   const context = useAppContext()
   return (
@@ -33,7 +33,7 @@ export default function Aboutme() {
             <p>{text}</p>
           </div>
           <div className="button w-full flex justify-content-center pt-[2rem]">
-            <a href="https://akiira.online/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
+            <a href="/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">
               <Button className={`${styles.button_text}`}
                 type="primary"
                 shape="round"

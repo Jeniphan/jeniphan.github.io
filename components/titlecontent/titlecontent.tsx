@@ -49,11 +49,11 @@ export default function Titlecontent() {
                 Jaay Jetniphan
               </h1>
               <span className={`${styles.web_class} ${context.theme == 'dark' ? "text-[#fafafa6e]" : "text-[#3f3f3f6e]"}`}>
-                Web Developer
+                Full Stack Developer
               </span>
               <div className="personal pt-[2rem] leading-relaxed">
                 <p>
-                  Web Developer with hands-on experience in JavaScript, TypeScript, html, CSS, Angular Framework, NextJS. And also experience in Back-End Developer such as Nodejs, Express, NestJS Framework, GCP, and others.
+                  Full Stack Developer with hands-on experience in JavaScript, TypeScript, html, CSS & SCSS, Bootstrap & Tailwind, Angular Framework, NextJS, VueJS. And also experience in Back-End Developer such as Nodejs, Express, Fastify, NestJS Framework, Dotnet CORE, C#, GCP, and others.
                 </p>
               </div>
             </div>
