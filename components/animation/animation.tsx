@@ -27,10 +27,13 @@ export default function Animation() {
 
 
     setTimeout(() => {
-      const url = "api/users/UserInfo?id=532b13b5-3ebb-465d-a29a-2d9036fd2fab"
+      const url = "/api/users/UserInfo?id=532b13b5-3ebb-465d-a29a-2d9036fd2fab"
       httpService.get(url).then((res: any) => {
         if (res.result) {
-          console.log(res);
+          console.log(res.data);
+          if (res.data) {
+            context.setDataAPI(res.data)
+          }
           setTimeout(() => {
             document.body.classList.remove('max-h-screen', 'overflow-hidden')
             context.setAnimation(true);

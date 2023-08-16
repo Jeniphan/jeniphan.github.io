@@ -1,85 +1,16 @@
 import { useAppContext } from '@hooks/context';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './skill.module.css'
 import { HiBadgeCheck } from "react-icons/hi";
 import { Menu } from 'antd';
 import Fade from 'react-reveal/Fade';
 import { AiOutlineUnorderedList } from 'react-icons/ai';
+import { ISkillsBack, ISkillsFront, ISkillsSoft } from '@helper/types';
 
 export default function Skill() {
   const context = useAppContext();
   const [checkSkill, setCheckSkill] = useState({ current: 'tech' })
   const { current } = checkSkill;
-
-  const frontend = [
-    {
-      title: 'JavaScript',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'TypeScript',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'html',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'CSS & SCSS',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'Bootstrap & Tailwind',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'Angular Framework',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'NextJS Framework',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'VueJs Framework',
-      discription: 'Intermediate'
-    }
-  ]
-
-  const backend = [
-    {
-      title: 'NodeJS',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'TypeScript',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'Express & Fastify',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'NestJS Framework',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'MySQL & SQL',
-      discription: 'Intermediate'
-    },
-    {
-      title: 'GCP, Nginx, Linux Server',
-      discription: 'Intermediate'
-    }, ,
-    {
-      title: 'Firebase',
-      discription: 'Basic'
-    },
-    {
-      title: '.Net CORE & Framework',
-      discription: 'Intermediate'
-    },
-  ]
 
   const embaddeds = [
     {
@@ -108,33 +39,151 @@ export default function Skill() {
     },
   ]
 
-  const softskills = [
+  const [frontend, setFrontEnd] = useState<ISkillsFront[]>([
     {
-      title: 'Time Management',
+      id: '1',
+      order: 1,
+      title: 'JavaScript',
       discription: 'Intermediate'
     },
     {
-      title: 'Teamwork and Collaboration',
+      id: '1',
+      order: 1,
+      title: 'TypeScript',
       discription: 'Intermediate'
     },
     {
-      title: 'Complex Problem Solving',
+      id: '1',
+      order: 1,
+      title: 'html',
       discription: 'Intermediate'
     },
     {
-      title: 'Communication skills',
+      id: '1',
+      order: 1,
+      title: 'CSS & SCSS',
       discription: 'Intermediate'
     },
     {
-      title: 'Flexibility and Adaptability',
+      id: '1',
+      order: 1,
+      title: 'Bootstrap & Tailwind',
       discription: 'Intermediate'
     },
     {
-      title: 'Leadership',
+      id: '1',
+      order: 1,
+      title: 'Angular Framework',
       discription: 'Intermediate'
     },
-  ]
+    {
+      id: '1',
+      order: 1,
+      title: 'NextJS Framework',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'VueJs Framework',
+      discription: 'Intermediate'
+    }])
 
+  const [backEnd, setBackEnd] = useState<ISkillsBack[]>([
+    {
+      id: '1',
+      order: 1,
+      title: 'NodeJS',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'TypeScript',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'Express & Fastify',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'NestJS Framework',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'MySQL & SQL',
+      discription: 'Intermediate'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: 'GCP, Nginx, Linux Server',
+      discription: 'Intermediate'
+    }, ,
+    {
+      id: '1',
+      order: 1,
+      title: 'Firebase',
+      discription: 'Basic'
+    },
+    {
+      id: '1',
+      order: 1,
+      title: '.Net CORE & Framework',
+      discription: 'Intermediate'
+    },
+  ])
+
+  const [softskills, setSoftSkills] = useState<ISkillsSoft[]>([{
+    title: 'Time Management',
+    discription: 'Intermediate',
+    id: '1',
+    order: 1
+  },
+  {
+    title: 'Teamwork and Collaboration',
+    discription: 'Intermediate',
+    id: '1',
+    order: 1
+  },
+  {
+    title: 'Complex Problem Solving',
+    discription: 'Intermediate',
+    id: '1',
+    order: 1
+  },
+  {
+    title: 'Communication skills',
+    discription: 'Intermediate',
+    id: '1',
+    order: 1
+  },
+  {
+    title: 'Flexibility and Adaptability',
+    discription: 'Intermediate',
+    id: '1',
+    order: 1
+  },
+  {
+    title: 'Leadership',
+    discription: 'Intermediate', id: '1',
+    order: 1
+  },])
+
+  useEffect(() => {
+    if (context.dataAPI) {
+      // setEducation(context.dataAPI.Educations)
+      setFrontEnd(context.dataAPI.Skills_front)
+      setBackEnd(context.dataAPI.Skills_back)
+      setSoftSkills(context.dataAPI.Skills_soft)
+    }
+  }, [context.dataAPI])
   const handleClick = (e) => {
     console.log('click ', e);
     setCheckSkill({ current: e.key });
@@ -210,7 +259,7 @@ export default function Skill() {
                 </h3>
               </div>
               <div className="content_back p-[1rem]">
-                {backend.map((data, index) => {
+                {backEnd.map((data, index) => {
                   return (
                     <div className="" key={index}>
                       <div className='flex gap-3'>

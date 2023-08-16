@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
-import { Gopage, Theme } from '@helper/types'
+import { Gopage, IGetUserInfo, Theme } from '@helper/types'
 
 interface SharedState {
 	theme: Theme
 	animation: boolean
 	component: { current: Gopage }
 	windowWidth: number
-	dataAPI: any
+	dataAPI: IGetUserInfo
 	setTheme?: (value: Theme) => void
 	setAnimation?: (value: boolean) => void
 	setComponent?: (value: { current: Gopage }) => void
@@ -20,7 +20,7 @@ const defaultState: SharedState = {
 	animation: false,
 	component: { current: 'educations' },
 	windowWidth: 0,
-	dataAPI: {}
+	dataAPI: null
 }
 
 const AppContext = React.createContext<SharedState>(defaultState)

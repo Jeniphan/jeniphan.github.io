@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './aboutme.module.css'
 import { Button, Tag } from 'antd'
 import { BsFillArrowDownLeftCircleFill } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context';
+import { IPersonals } from '@helper/types';
 
 export default function Aboutme() {
   const text = `Hello. My name is Jetniphan Pukkham, everyone called me Jay. Graduating from King Mongkut's University of Technology Thonburi. Major as Electronic and Telecommunication Engineering. I work as a Full Stack Developer and have been working here for few year now. I’ve always wanted to improve my Coding so I interested about new Technology.`;
 
+  const [personal, setPersonal] = useState<IPersonals>()
   const context = useAppContext()
+
+  useEffect(() => {
+    if (context.dataAPI) {
+      setPersonal(context.dataAPI.Personals)
+    }
+  }, [context.dataAPI])
   return (
     <div className={`${styles.about} w-full row justify-content-center pt-[100px] pb-[100px] m-0`}>
       <div className={`text-center ${context.theme == 'dark' ? styles.title_dark : styles.title}`}>
@@ -24,13 +32,13 @@ export default function Aboutme() {
 
         <div className={`${styles.content} col-lg-6`}>
           <div className={`${context.theme == 'dark' ? styles.header_dark : styles.header} gap-4`}>
-            <h3>Jetniphan Pukkham</h3>
+            <h3>{personal?.Title}</h3>
             <Tag color="blue">Front-End</Tag>
             <Tag color="blue">Back-End</Tag>
             <Tag color="blue">Full Stack</Tag>
           </div>
           <div className={`${context.theme == 'dark' ? styles.text_dark : styles.text} pt-[1rem] leading-relaxed text-[14px]`}>
-            <p>{text}</p>
+            <p>{personal?.Skips}</p>
           </div>
           <div className="button w-full flex justify-content-center pt-[2rem]">
             <a href="/resume/resume_Jetniphan.pdf" className="" target="_blank" rel="noopener noreferrer">

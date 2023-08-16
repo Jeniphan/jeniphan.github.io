@@ -1,41 +1,59 @@
 import { useAppContext } from '@hooks/context';
 import { Timeline } from 'antd'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsLink } from 'react-icons/bs'
 import styles from './work.module.css'
+import { IWork } from '@helper/types';
 
 export default function Work() {
   const context = useAppContext();
-  const work = [
+
+  const [work, setWork] = useState<IWork[]>([
     {
-      year: 'Sep 6th, 2022 - Present',
+      id: '1',
+      start: 'Sep 6th, 2022',
+      end: 'Present',
       name: "Logicton Co.,Ltd.",
-      major: 'Full Stack Developer.',
-      link: 'https://logicton.com/'
+      marjor: 'Full Stack Developer.',
+      link: 'https://logicton.com/',
+      order: 0
     },
     {
-      year: 'May 30th, 2022 - Sep 5th, 2022',
+      id: '2',
+      start: 'May 30th, 2022',
+      end: 'Sep 5th, 2022',
       name: "KARNKANOK PROPERTY COMPANY Limited.",
-      major: 'Front End Developer.',
-      link: 'https://www.kkn.co.th'
+      marjor: 'Front End Developer.',
+      link: 'https://www.kkn.co.th',
+      order: 1
     },
     {
-      year: 'Jun 1st, 2021 - Nov 30th, 2021',
+      id: '3',
+      start: 'Jun 1st, 2021',
+      end: 'Nov 30th, 2021',
       name: "TOYOTA TSUSHO DENSO ELECTRONIC(THAILAND)Co.,Ltd.",
-      major: 'Software Engineer Intern.',
-      link: 'https://www.denso.com/th/th/about-us/company-information/tdet/'
+      marjor: 'Software Engineer Intern.',
+      link: 'https://www.denso.com/th/th/about-us/company-information/tdet/',
+      order: 2
     },
-  ]
+  ])
+
+  useEffect(() => {
+    if (context.dataAPI) {
+      setWork(context.dataAPI.Works)
+    }
+  }, [context.dataAPI])
+
   return (
     <div className={`${styles.work} flex justify-content-center h-100 w-full pt-[70px]`}>
       <Timeline mode='left'>
         {work.map((data, index) => {
           return (
-            <Timeline.Item label={data.year} className={`${styles.work_title} ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`} key={index}>
+            <Timeline.Item label={`${data.start} - ${data.end}`} className={`${styles.work_title} ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}`} key={index}>
               <a href={data.link} className="" target="_blank" rel="noopener noreferrer">
                 <h4 className={context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f]'}>{data.name} <BsLink className="" /></h4>
               </a>
-              <p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>{data.major}</p>
+              <p className={context.theme == 'dark' ? 'text-[#fafafa6e]' : 'text-[#3f3f3f6e]'}>{data.marjor}</p>
             </Timeline.Item>
           )
         })}

@@ -1,12 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Divider } from 'antd'
 import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs'
 import { useAppContext } from '@hooks/context'
 import Link from 'next/link'
+import { IContacts, IContent } from '@helper/types'
 
 const Footer: FC = () => {
 	const context = useAppContext()
 	const year = new Date().getFullYear();
+
+	const [content, setContent] = useState<IContent>()
+	const [dataContact, setDataContact] = useState<IContacts[]>([])
+
+	useEffect(() => {
+		if (context.dataAPI) {
+			setContent(context.dataAPI.Content)
+			setDataContact(context.dataAPI.Contacts)
+		}
+	}, [context.dataAPI])
 
 	// console.log("new date >>>>>> ", year);
 
@@ -16,7 +27,7 @@ const Footer: FC = () => {
 				<div className="row align-items-center h-full">
 					<div className="col-md-4 title-footer text-center">
 						<h2>Akiira</h2>
-						<span>Web-developer</span>
+						<span>{content?.Content ?? ""}</span>
 					</div>
 
 					<div className="col-md-4">
@@ -51,17 +62,17 @@ const Footer: FC = () => {
 					<div className="col-md-4">
 						<ul className="ul-footer-icon gap-4 mb-0 pl-0">
 							<li>
-								<a href="https://www.facebook.com/jeniphan.pukkham/" className="" target="_blank" rel="noopener noreferrer">
+								<a href={dataContact.find(arg => arg.PlatFormSlug == 'facebook')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
 									<BsFacebook className="w-[2rem] h-[2rem] text-[#fafafa]" />
 								</a>
 							</li>
 							<li>
-								<a href="https://www.linkedin.com/in/jetniphan-pukkham-957671212/" className="" target="_blank" rel="noopener noreferrer">
+								<a href={dataContact.find(arg => arg.PlatFormSlug == 'linkin')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
 									<BsLinkedin className="w-[2rem] h-[2rem] text-[#fafafa]" />
 								</a>
 							</li>
 							<li>
-								<a href="https://github.com/Jeniphan" className="" target="_blank" rel="noopener noreferrer">
+								<a href={dataContact.find(arg => arg.PlatFormSlug == 'github')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
 									<BsGithub className="w-[2rem] h-[2rem] text-[#fafafa]" />
 								</a>
 							</li>

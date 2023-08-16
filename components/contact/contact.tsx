@@ -1,14 +1,22 @@
 import { useAppContext } from '@hooks/context';
 import { Button, Form, Input, InputNumber } from 'antd';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsFacebook, BsFillTelephoneFill, BsLinkedin } from 'react-icons/bs';
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillFacebook, AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
 import styles from './contact.module.css'
+import { IContacts } from '@helper/types';
 
 export default function Contact() {
   const context = useAppContext();
+
+  const [contact, setContact] = useState<IContacts[]>([])
+  useEffect(() => {
+    if (context.dataAPI) {
+      setContact(context.dataAPI.Contacts)
+    }
+  }, [context.dataAPI])
 
   const layout = {
     labelCol: { span: 8 },
@@ -50,8 +58,8 @@ export default function Contact() {
                 <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsFacebook className="w-[2rem] h-[2rem]" />
                 </div>
-                <h3>Jeniphan Pukkham</h3>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.m.me/jeniphan.pukkham">
+                <h3>{contact.find(arg => arg.PlatFormSlug == 'facebook')?.PlatFormName ?? ""}</h3>
+                <a target="_blank" rel="noopener noreferrer" href={contact.find(arg => arg.PlatFormSlug == 'facebook')?.PlatFormLink ?? ""}>
                   <p>{`Write to me ->`}</p>
                 </a>
               </div>
@@ -64,8 +72,8 @@ export default function Contact() {
                 <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsLinkedin className="w-[2rem] h-[2rem]" />
                 </div>
-                <h3>Jetniphan Pukkham</h3>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jetniphan-pukkham-957671212/">
+                <h3>{contact.find(arg => arg.PlatFormSlug == 'linkin')?.PlatFormName ?? ""}</h3>
+                <a target="_blank" rel="noopener noreferrer" href={contact.find(arg => arg.PlatFormSlug == 'linkin')?.PlatFormLink ?? ""}>
                   <p>{`Write to me ->`}</p>
                 </a>
               </div>
@@ -78,8 +86,8 @@ export default function Contact() {
                 <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <MdEmail className="w-[2rem] h-[2rem]" />
                 </div>
-                <h3>Jeni.pukkham@gmail.com</h3>
-                <a href="https://mail.google.com/mail/u/0/?view=cm&ui=2&tf=0&fs=1&to=jeni.pukkham@gmail.com"
+                <h3>{contact.find(arg => arg.PlatFormSlug == 'email')?.PlatFormName ?? ""}</h3>
+                <a href={contact.find(arg => arg.PlatFormSlug == 'email')?.PlatFormLink ?? ""}
                   className=""
                   target="_blank" rel="noopener noreferrer">
                   <p>{`Write to me ->`}</p>
@@ -94,8 +102,8 @@ export default function Contact() {
                 <div className={`flex justify-content-center w-full mb-[5px] ${context.theme == 'dark' ? styles.icon__dark : ''}`}>
                   <BsFillTelephoneFill className="w-[2rem] h-[2rem]" />
                 </div>
-                <h3>080-915-3786</h3>
-                <a href="tel:+66809153786">
+                <h3>{contact.find(arg => arg.PlatFormSlug == 'phone')?.PlatFormName ?? ""}</h3>
+                <a href={`tel:+66${contact.find(arg => arg.PlatFormSlug == 'phone')?.PlatFormLink ?? ""}`}>
                   <p>{`Call me now ->`}</p>
                 </a>
               </div>
@@ -132,16 +140,16 @@ export default function Contact() {
 
         <div className="col-lg-6 flex align-items-center gap-x-2 justify-content-center">
           <span className={`${styles.follow} text-[18px]`}>Follow me :</span>
-          <a href="https://www.facebook.com/jeniphan.pukkham/" className="" target="_blank" rel="noopener noreferrer">
+          <a href={contact.find(arg => arg.PlatFormSlug == 'facebook')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
             <AiFillFacebook className={`w-[2rem] h-[2rem] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f6e]'}`} />
           </a>
-          <a href="https://www.instagram.com/jetniphan_pk/" className="" target="_blank" rel="noopener noreferrer">
+          <a href={contact.find(arg => arg.PlatFormSlug == 'linkin')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
             <AiFillInstagram className={`w-[2rem] h-[2rem] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f6e]'}`} />
           </a>
-          <a href="https://github.com/Jeniphan" className="" target="_blank" rel="noopener noreferrer">
+          <a href={contact.find(arg => arg.PlatFormSlug == 'github')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
             <AiFillGithub className={`w-[2rem] h-[2rem] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f6e]'}`} />
           </a>
-          <a href="https://www.linkedin.com/in/jetniphan-pukkham-957671212/" className="" target="_blank" rel="noopener noreferrer">
+          <a href={contact.find(arg => arg.PlatFormSlug == 'linkin')?.PlatFormLink ?? ""} className="" target="_blank" rel="noopener noreferrer">
             <AiFillLinkedin className={`w-[2rem] h-[2rem] ${context.theme == 'dark' ? 'text-[#fafafa]' : 'text-[#3f3f3f6e]'}`} />
           </a>
         </div>
