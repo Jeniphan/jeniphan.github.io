@@ -52,6 +52,7 @@ const Home: NextPage = () => {
 		<>
 			<Head>
 				<title>Jetniphan Pukkham - @All about Akiira.</title>
+				<meta name="google-adsense-account" content="ca-pub-3436829376802292"></meta>
 				<meta httpEquiv="content-language" content="en-us" />
 				<meta name="robots" content="follow" />
 				<meta
