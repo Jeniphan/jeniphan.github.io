@@ -342,7 +342,7 @@ const resumeButtonStyle: CSSProperties = {
 
 const timelineDotStyle: CSSProperties = {
   position: 'absolute',
-  left: -31,
+  left: -26,
   top: 4,
   width: 10,
   height: 10,
