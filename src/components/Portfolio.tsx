@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import Image from 'next/image';
-import { EXPERIENCE, I18N, NAV_ITEMS, PROJECTS, SOCIALS, type Lang } from '@/lib/data';
+import { EDUCATION, EXPERIENCE, I18N, NAV_ITEMS, PROJECTS, SKILLS, SOCIALS, STRENGTHS, type Lang } from '@/lib/data';
 import ContributionGraph from './ContributionGraph';
 import CommandPalette from './CommandPalette';
 
@@ -222,8 +222,57 @@ export default function Portfolio() {
           </div>
         </section>
 
+        <section id="skills" style={{ padding: '20px 72px 40px', display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 860 }}>
+          <div style={{ fontFamily: mono, fontSize: 11.5, color: 'var(--foreground-muted)' }}>{`// 03 · ${t.skillsTitle}`}</div>
+          <h2 style={{ margin: 0, fontSize: 28, fontWeight: 700, letterSpacing: '-0.3px' }}>{t.skillsTitle}</h2>
+
+          <div>
+            <div style={{ fontFamily: mono, fontSize: 12, fontWeight: 600, color: 'var(--foreground-muted)', marginBottom: 12 }}>
+              {t.skillsSubtitle}
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+              {SKILLS.map((group) => (
+                <div key={group.id} style={skillGroupStyle}>
+                  <div style={{ fontSize: 13, fontWeight: 700 }}>{group.label[lang]}</div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                    {group.items.map((item) => (
+                      <span key={item} style={tagStyle}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div style={{ fontFamily: mono, fontSize: 12, fontWeight: 600, color: 'var(--foreground-muted)', marginBottom: 12 }}>
+              {t.educationSubtitle}
+            </div>
+            {EDUCATION.map((edu) => (
+              <div key={edu.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 700 }}>{edu.degree[lang]}</div>
+                  <div style={{ fontSize: 13.5, color: 'var(--foreground-muted)', marginTop: 3 }}>{edu.school[lang]}</div>
+                </div>
+                <div style={{ fontFamily: mono, fontSize: 11, color: 'var(--foreground-muted)', whiteSpace: 'nowrap' }}>{edu.dates}</div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <div style={{ fontFamily: mono, fontSize: 12, fontWeight: 600, color: 'var(--foreground-muted)', marginBottom: 12 }}>
+              {t.strengthsSubtitle}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {STRENGTHS[lang].map((s) => (
+                <span key={s} style={tagStyle}>{s}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="projects" style={{ padding: '20px 72px 60px', display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
-          <div style={{ fontFamily: mono, fontSize: 11.5, color: 'var(--foreground-muted)' }}>{`// 03 · ${t.projTitle}`}</div>
+          <div style={{ fontFamily: mono, fontSize: 11.5, color: 'var(--foreground-muted)' }}>{`// 04 · ${t.projTitle}`}</div>
           <h2 style={{ margin: 0, fontSize: 28, fontWeight: 700, letterSpacing: '-0.3px' }}>{t.projTitle}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             {PROJECTS.map((proj) => (
@@ -349,6 +398,16 @@ const timelineDotStyle: CSSProperties = {
   borderRadius: '50%',
   background: 'var(--accent-accent)',
   boxShadow: '0 0 0 4px var(--background-background)',
+};
+
+const skillGroupStyle: CSSProperties = {
+  border: '1px solid var(--border)',
+  borderRadius: 10,
+  padding: 14,
+  background: 'var(--surface-surface)',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 10,
 };
 
 const projectCardStyle: CSSProperties = {

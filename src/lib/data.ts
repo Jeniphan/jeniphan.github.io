@@ -73,6 +73,77 @@ export const EXPERIENCE: Job[] = [
   },
 ];
 
+export interface SkillGroup {
+  id: string;
+  label: Record<Lang, string>;
+  items: string[];
+}
+
+export const SKILLS: SkillGroup[] = [
+  {
+    id: 'languages',
+    label: { en: 'Languages', th: 'ภาษาโปรแกรม' },
+    items: ['TypeScript', 'Go', 'C#', 'JavaScript', 'SQL', 'C++'],
+  },
+  {
+    id: 'backend',
+    label: { en: 'Backend', th: 'Backend' },
+    items: ['NestJS', 'Node.js', 'Express', 'Fastify', 'ASP.NET Core', 'Go microservices', 'WebSocket'],
+  },
+  {
+    id: 'frontend',
+    label: { en: 'Frontend', th: 'Frontend' },
+    items: ['Next.js', 'Angular', 'Vue.js', 'Electron', 'Tailwind', 'SCSS'],
+  },
+  {
+    id: 'data',
+    label: { en: 'Data & queues', th: 'Data & Queue' },
+    items: ['PostgreSQL', 'MySQL', 'SQL Server', 'Prisma', 'Redis', 'BullMQ', 'AWS SQS'],
+  },
+  {
+    id: 'platform',
+    label: { en: 'Platform', th: 'Platform' },
+    items: ['Dokploy', 'Vercel', 'Docker', 'CI/CD'],
+  },
+  {
+    id: 'architecture',
+    label: { en: 'Architecture', th: 'สถาปัตยกรรม' },
+    items: ['Microservices', 'Hexagonal', 'DDD', 'TDD', 'Feature-Sliced Design', 'SDLC'],
+  },
+  {
+    id: 'ai-tooling',
+    label: { en: 'AI tooling', th: 'AI Tooling' },
+    items: ['Claude Code', 'Codex', 'sub-agents', 'custom agents & skills'],
+  },
+];
+
+export interface EducationEntry {
+  id: string;
+  degree: Record<Lang, string>;
+  school: Record<Lang, string>;
+  dates: string;
+}
+
+export const EDUCATION: EducationEntry[] = [
+  {
+    id: 'kmutt',
+    degree: {
+      en: 'B.Eng. Electronic & Telecommunication Engineering',
+      th: 'วิศวกรรมศาสตรบัณฑิต สาขาอิเล็กทรอนิกส์และโทรคมนาคม',
+    },
+    school: {
+      en: "King Mongkut's University of Technology Thonburi (KMUTT)",
+      th: 'มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT)',
+    },
+    dates: '2018 – 2022',
+  },
+];
+
+export const STRENGTHS: Record<Lang, string[]> = {
+  en: ['Technical leadership', 'Complex problem solving', 'Cross-team communication', 'Adaptability'],
+  th: ['ภาวะผู้นำด้านเทคนิค', 'การแก้ปัญหาที่ซับซ้อน', 'การสื่อสารข้ามทีม', 'ความยืดหยุ่นในการปรับตัว'],
+};
+
 export const PROJECTS: Project[] = [
   {
     id: 'tunderpos',
@@ -129,6 +200,10 @@ export const I18N = {
     contribTitle: '$ git log --stat --since=1y',
     contribCaption: 'Last 140 days · github.com/Jeniphan',
     expTitle: 'Experience',
+    skillsTitle: 'Skills',
+    skillsSubtitle: 'Technical skills',
+    educationSubtitle: 'Education',
+    strengthsSubtitle: 'Strengths',
     projTitle: 'Projects',
     resumeCmd: 'resume.pdf',
     resumeLink: 'Résumé',
@@ -151,6 +226,10 @@ export const I18N = {
     contribTitle: '$ git log --stat --since=1y',
     contribCaption: '140 วันล่าสุด · github.com/Jeniphan',
     expTitle: 'ประสบการณ์',
+    skillsTitle: 'ทักษะ',
+    skillsSubtitle: 'ทักษะด้านเทคนิค',
+    educationSubtitle: 'การศึกษา',
+    strengthsSubtitle: 'จุดแข็ง',
     projTitle: 'โปรเจกต์',
     resumeCmd: 'resume.pdf',
     resumeLink: 'เรซูเม่',
@@ -165,6 +244,7 @@ export const I18N = {
 export const NAV_ITEMS: { id: string; label: string; connector: string }[] = [
   { id: 'about', label: 'about.tsx', connector: '├─' },
   { id: 'experience', label: 'experience.tsx', connector: '├─' },
+  { id: 'skills', label: 'skills.tsx', connector: '├─' },
   { id: 'projects', label: 'projects.tsx', connector: '└─' },
 ];
 
