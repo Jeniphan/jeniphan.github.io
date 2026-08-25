@@ -202,8 +202,8 @@ export const I18N = {
     expTitle: 'Experience',
     skillsTitle: 'Skills',
     skillsSubtitle: 'Technical skills',
-    educationSubtitle: 'Education',
     strengthsSubtitle: 'Strengths',
+    eduTitle: 'Education',
     projTitle: 'Projects',
     resumeCmd: 'resume.pdf',
     resumeLink: 'Résumé',
@@ -228,8 +228,8 @@ export const I18N = {
     expTitle: 'ประสบการณ์',
     skillsTitle: 'ทักษะ',
     skillsSubtitle: 'ทักษะด้านเทคนิค',
-    educationSubtitle: 'การศึกษา',
     strengthsSubtitle: 'จุดแข็ง',
+    eduTitle: 'การศึกษา',
     projTitle: 'โปรเจกต์',
     resumeCmd: 'resume.pdf',
     resumeLink: 'เรซูเม่',
@@ -245,6 +245,7 @@ export const NAV_ITEMS: { id: string; label: string; connector: string }[] = [
   { id: 'about', label: 'about.tsx', connector: '├─' },
   { id: 'experience', label: 'experience.tsx', connector: '├─' },
   { id: 'skills', label: 'skills.tsx', connector: '├─' },
+  { id: 'education', label: 'education.tsx', connector: '├─' },
   { id: 'projects', label: 'projects.tsx', connector: '└─' },
 ];
 
