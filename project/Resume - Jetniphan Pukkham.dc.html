@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/styles.css">
+<script src="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/_ds_bundle.js"></script>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+doc-page:not(:defined){visibility:hidden}
+a{color:rgb(4,133,247);text-decoration:none}
+a:hover{color:rgb(3,105,196)}
+</style>
+</helmet>
+<doc-page size="letter">
+<section class="page" style="display:grid;grid-template-columns:272px 1fr;font-family:Inter, 'IBM Plex Sans Thai', system-ui, sans-serif;color:rgb(24,24,27);background:#fff">
+
+<aside style="background:rgb(24,24,27);color:rgb(228,228,231);padding:34px 26px 30px;display:flex;flex-direction:column;gap:22px">
+<sc-if value="{{ showPhoto }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;justify-content:center">
+<image-slot id="headshot" style="width:118px;height:118px" shape="circle" placeholder="Drop your photo"></image-slot>
+</div>
+</sc-if>
+
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font-size:25px;line-height:1.1;font-weight:700;letter-spacing:-0.4px;color:#fff">Jetniphan<br>Pukkham</div>
+<div style="font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:rgb(4,133,247);font-weight:600">Senior Software Engineer</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgb(161,161,170);padding-bottom:6px;border-bottom:1px solid rgb(63,63,70)">Contact</div>
+<div style="display:flex;flex-direction:column;gap:5px;font-size:11px;line-height:1.45;color:rgb(212,212,216)">
+<div>(+66) 80-915-3786</div>
+<div>jeni.pukkham@gmail.com</div>
+<div><a href="https://www.akiira.site/">akiira.site</a></div>
+<div><a href="https://github.com/Jeniphan">github.com/Jeniphan</a></div>
+<div>Chiangmai, Thailand</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgb(161,161,170);padding-bottom:6px;border-bottom:1px solid rgb(63,63,70)">Technical skills</div>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:10.5px;line-height:1.5;color:rgb(212,212,216)">
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Languages</span>TypeScript, Go, C#, JavaScript, SQL, C++</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Backend</span>NestJS, Node.js, Express, Fastify, ASP.NET Core, Go microservices, WebSocket</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Frontend</span>Next.js, Angular, Vue.js, Electron, Tailwind, SCSS</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Data &amp; queues</span>PostgreSQL, MySQL, SQL Server, Prisma, Redis, BullMQ, AWS SQS</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Platform</span>Dokploy, Vercel, Docker, CI/CD</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">Architecture</span>Microservices, Hexagonal, DDD, TDD, Feature-Sliced Design, SDLC</div>
+<div><span style="display:block;color:#fff;font-weight:600;font-size:10px">AI tooling</span>Claude Code, Codex, sub-agents, custom agents &amp; skills</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgb(161,161,170);padding-bottom:6px;border-bottom:1px solid rgb(63,63,70)">Education</div>
+<div style="font-size:10.5px;line-height:1.5;color:rgb(212,212,216)">
+<span style="display:block;color:#fff;font-weight:600;font-size:11px">B.Eng. Electronic &amp; Telecommunication Engineering</span>
+King Mongkut's University of Technology Thonburi (KMUTT) · 2018–2022
+</div>
+</div>
+
+<sc-if value="{{ showSoftSkills }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:rgb(161,161,170);padding-bottom:6px;border-bottom:1px solid rgb(63,63,70)">Strengths</div>
+<div style="font-size:10.5px;line-height:1.6;color:rgb(212,212,216)">Technical leadership · Complex problem solving · Cross-team communication · Adaptability</div>
+</div>
+</sc-if>
+</aside>
+
+<main style="padding:36px 38px 32px;display:flex;flex-direction:column;gap:20px">
+
+<section style="display:flex;flex-direction:column;gap:7px">
+<h1 style="margin:0;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:rgb(4,133,247)">Profile</h1>
+<p style="margin:0;font-size:12px;line-height:1.6;color:rgb(63,63,70);text-wrap:pretty">Full-stack engineer with 4+ years building production systems across agriculture, logistics and property tech — from Go and NestJS microservices to Next.js and Angular front ends. Comfortable owning a feature end to end: data model, queue-driven background work, API, UI and deployment. Currently shipping enterprise tooling at AXONS while running three products of my own in the wild.</p>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:11px">
+<h2 style="margin:0;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:rgb(4,133,247)">Experience</h2>
+
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<div style="font-size:13px;font-weight:700">Full Stack Developer · AXONS</div>
+<div style="font-size:10px;color:rgb(113,113,122);white-space:nowrap">Aug 2023 – Present</div>
+</div>
+<ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">
+<li>Build and maintain internal platform services in Go and NestJS on a microservice architecture, integrating over AWS SQS and WebSocket for real-time and asynchronous workloads.</li>
+<li>Design PostgreSQL and MySQL schemas and the Next.js interfaces on top of them, taking features from spec to release.</li>
+<li>Introduced Redis and BullMQ for queued background jobs, moving long-running work off the request path.</li>
+</ul>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<div style="font-size:13px;font-weight:700">Full Stack Developer · Logicton Co., Ltd.</div>
+<div style="font-size:10px;color:rgb(113,113,122);white-space:nowrap">Sep 2022 – Present</div>
+</div>
+<ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">
+<li>Deliver logistics tooling across an ASP.NET Core / C# backend and NestJS + Fastify services, with Vue.js front ends on SQL Server.</li>
+<li>Own feature delivery end to end, including deployment via Dokploy and Vercel.</li>
+</ul>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<div style="font-size:13px;font-weight:700">Front-End Developer · Karnkanok Property</div>
+<div style="font-size:10px;color:rgb(113,113,122);white-space:nowrap">Jun 2022 – Sep 2022</div>
+</div>
+<ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">
+<li>Designed and built internal web tools in Angular with HTML and SCSS for the property sales team.</li>
+</ul>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<div style="font-size:13px;font-weight:700">Software Engineer Intern · Toyota Tsusho Denso Electronics (Thailand)</div>
+<div style="font-size:10px;color:rgb(113,113,122);white-space:nowrap">Jun – Nov 2021</div>
+</div>
+<ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">
+<li>Built factory-floor desktop tooling with Electron, Angular, NestJS and MySQL.</li>
+</ul>
+</div>
+</section>
+
+<sc-if value="{{ showProjects }}" hint-placeholder-val="{{ true }}">
+<section style="display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:rgb(4,133,247)">Selected products</h2>
+
+<div style="display:flex;flex-direction:column;gap:3px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<div style="font-size:12.5px;font-weight:700">TunderPOS</div>
+<a href="https://tunderpos.com/th" style="font-size:10px">tunderpos.com</a>
+</div>
+<p style="margin:0;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">Point-of-sale platform for restaurants, cafés and grocery stores: online ordering, LINE LIFF membership, stock control and staff management. Full owner of architecture, delivery and hosting.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:3px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<div style="font-size:12.5px;font-weight:700">TunderCoach AI</div>
+<a href="https://lin.ee/TiFdzC9" style="font-size:10px">LINE</a>
+</div>
+<p style="margin:0;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">AI running coach that generates individual training plans toward a goal, reviews each session and weekly progress, and adapts the plan. Integrated with Strava.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:3px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<div style="font-size:12.5px;font-weight:700">BabyBeat</div>
+<a href="https://lin.ee/qyQfwrk" style="font-size:10px">LINE</a>
+</div>
+<p style="margin:0;font-size:11.5px;line-height:1.55;color:rgb(63,63,70)">Newborn-care assistant bot that logs feeding, sleep and diaper events and turns them into a summary parents can bring to a paediatrician.</p>
+</div>
+</section>
+</sc-if>
+</main>
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showProjects&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showSoftSkills&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showPhoto: this.props.showPhoto ?? true,
+      showProjects: this.props.showProjects ?? true,
+      showSoftSkills: this.props.showSoftSkills ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

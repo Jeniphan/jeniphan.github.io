@@ -1,0 +1,31 @@
+/* Type scale — HeroUI Foundations/Typography (Inter, Tailwind-based) */
+:root{
+  --text-h1:700 56px/1 var(--font),sans-serif;
+  --text-h2:700 24px/32px var(--font),sans-serif;
+  --text-h3:600 20px/28px var(--font),sans-serif;
+  --text-h4:600 16px/24px var(--font),sans-serif;
+  --text-body-base:400 16px/24px var(--font),sans-serif;
+  --text-body-base-medium:500 16px/24px var(--font),sans-serif;
+  --text-body-sm:400 14px/20px var(--font),sans-serif;
+  --text-body-sm-medium:500 14px/20px var(--font),sans-serif;
+  --text-body-xs:400 12px/16px var(--font),sans-serif;
+  --text-body-xs-medium:500 12px/16px var(--font),sans-serif;
+  --text-link-base:500 16px/24px var(--font),sans-serif;
+  --text-link-sm:500 14px/20px var(--font),sans-serif;
+  --text-field-base:400 16px/24px var(--font),sans-serif;
+  --text-field-sm:400 14px/20px var(--font),sans-serif;
+  --text-button-base:500 16px/24px var(--font),sans-serif;
+  --text-button-sm:500 14px/20px var(--font),sans-serif;
+}
+.text-h1{font:var(--text-h1);letter-spacing:-.01em}
+.text-h2{font:var(--text-h2);letter-spacing:-.005em}
+.text-h3{font:var(--text-h3);letter-spacing:-.005em}
+.text-h4{font:var(--text-h4)}
+.text-body-base{font:var(--text-body-base)}
+.text-body-base-medium{font:var(--text-body-base-medium)}
+.text-body-sm{font:var(--text-body-sm)}
+.text-body-sm-medium{font:var(--text-body-sm-medium)}
+.text-body-xs{font:var(--text-body-xs)}
+.text-body-xs-medium{font:var(--text-body-xs-medium)}
+.text-link-base{font:var(--text-link-base);text-decoration:underline}
+.text-link-sm{font:var(--text-link-sm);text-decoration:underline}

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import './tokens/fonts.css';
+@import './tokens/fig-tokens.css';
+@import './tokens/typography.css';
+@import './components/forms/fig-assets.css';
+@import './components/data-display/fig-assets.css';
+@import './components/overlay/fig-assets.css';
+@import './components/pickers/fig-assets.css';

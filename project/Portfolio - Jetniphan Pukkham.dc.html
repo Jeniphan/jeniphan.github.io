@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/styles.css">
+<script src="_ds/heroui-design-system-7345038f-d116-4955-bf72-b873ee36c75f/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0}
+::selection{background:rgba(4,133,247,0.35)}
+@keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+.term-cursor{display:inline-block;width:9px;height:18px;background:var(--accent-accent);margin-left:3px;vertical-align:-3px;animation:blink 1s step-end infinite}
+a{color:var(--accent-accent);text-decoration:none}
+a:hover{color:var(--accent-accent-hover)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
+@media (max-width:880px){
+.portfolio-grid{grid-template-columns:1fr !important}
+.portfolio-sidebar{position:relative !important;height:auto !important}
+}
+</style>
+</helmet>
+<div class="dark portfolio-grid" style="background:var(--background-background);color:var(--foreground);min-height:100vh;font-family:Inter,'IBM Plex Sans Thai',system-ui,sans-serif;display:grid;grid-template-columns:296px 1fr">
+
+<aside class="portfolio-sidebar" style="position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;border-right:1px solid var(--border);background:var(--surface-surface);padding:30px 22px;display:flex;flex-direction:column;gap:26px">
+
+<div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
+<image-slot id="headshot" style="width:84px;height:84px" shape="circle" placeholder="Drop photo"></image-slot>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:600">jetniphan.pukkham</div>
+<div style="font-size:11px;color:var(--foreground-muted);margin-top:3px;line-height:1.4">Senior Full Stack Developer</div>
+<div style="font-size:10.5px;color:var(--foreground-muted);margin-top:5px">{{ t.location }}</div>
+</div>
+</div>
+
+<div style="display:flex;background:var(--surface-surface-secondary);border-radius:8px;padding:3px;gap:2px">
+<button onClick="{{ setLangEn }}" style="{{ langEnStyle }}">EN</button>
+<button onClick="{{ setLangTh }}" style="{{ langThStyle }}">TH</button>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--foreground-muted);margin-bottom:4px">// {{ t.sectionsLabel }}</div>
+<sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="3">
+<div onClick="{{ nav.click }}" style="{{ nav.style }}">{{ nav.connector }} {{ nav.label }}</div>
+</sc-for>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:7px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--foreground-muted)">$ ls socials/</div>
+<a href="https://github.com/Jeniphan" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);display:flex;gap:6px;line-height:1.5">
+<span style="color:var(--accent-accent)">›</span><span>github.com/Jeniphan</span>
+</a>
+<a href="https://linkedin.com/in/jetniphan-pukkham-a6831842a" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);display:flex;gap:6px;line-height:1.5">
+<span style="color:var(--accent-accent)">›</span><span>linkedin.com/in/jetniphan</span>
+</a>
+<button onClick="{{ copyEmail }}" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);display:flex;gap:6px;line-height:1.5;background:none;border:none;padding:0;cursor:pointer;text-align:left">
+<span style="color:var(--accent-accent)">›</span><span>{{ emailLabel }}</span>
+</button>
+<a href="https://instagram.com/jaay__ni" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);display:flex;gap:6px;line-height:1.5">
+<span style="color:var(--accent-accent)">›</span><span>instagram.com/jaay__ni</span>
+</a>
+<a href="https://facebook.com/share/1EdGxCazpi" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);display:flex;gap:6px;line-height:1.5">
+<span style="color:var(--accent-accent)">›</span><span>facebook.com/jaay</span>
+</a>
+</div>
+
+<a href="uploads/current_resume-1787632409979-sv4o.pdf" download="Jetniphan-Pukkham-Resume.pdf" style="margin-top:auto;background:var(--accent-accent);color:#fff;text-align:center;padding:11px 14px;border-radius:8px;font-weight:600;font-size:12.5px;font-family:'JetBrains Mono',monospace">$ curl {{ t.resumeCmd }}</a>
+</aside>
+
+<main style="min-width:0">
+
+<section id="about" data-screen-label="About" style="padding:64px 72px 40px;display:flex;flex-direction:column;gap:28px;max-width:860px">
+<div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-surface);box-shadow:0 1px 2px rgba(0,0,0,0.4)">
+<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface-surface-secondary);border-bottom:1px solid var(--border)">
+<span style="width:11px;height:11px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+<span style="width:11px;height:11px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+<span style="width:11px;height:11px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+<span style="margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--foreground-muted)">jaay@portfolio — zsh</span>
+</div>
+<div style="padding:26px 26px 32px;font-family:'JetBrains Mono',monospace">
+<div style="color:var(--foreground-muted);font-size:14px">{{ t.heroPrompt }}</div>
+<div style="font-size:19px;font-weight:600;margin-top:8px;line-height:1.55;min-height:2.4em">{{ typedText }}<span class="term-cursor"></span></div>
+</div>
+</div>
+
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);margin-bottom:10px">// 01 · {{ t.aboutTitle }}</div>
+<h2 style="margin:0 0 14px;font-size:28px;font-weight:700;letter-spacing:-0.3px">{{ t.aboutTitle }}</h2>
+<p style="margin:0;font-size:16px;line-height:1.75;color:var(--foreground-muted);text-wrap:pretty">{{ t.aboutParagraph }}</p>
+</div>
+
+<sc-if value="{{ showContrib }}" hint-placeholder-val="{{ true }}">
+<div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;background:var(--surface-surface)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted);margin-bottom:14px">{{ t.contribTitle }}</div>
+<div style="display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:420px">
+<sc-for list="{{ contribCells }}" as="cell" hint-placeholder-count="40">
+<div style="width:100%;aspect-ratio:1;border-radius:2px;background:{{ cell.bg }}"></div>
+</sc-for>
+</div>
+<div style="margin-top:12px;font-size:11px;color:var(--foreground-muted)">{{ t.contribCaption }}</div>
+</div>
+</sc-if>
+</section>
+
+<section id="experience" data-screen-label="Experience" style="padding:20px 72px 40px;display:flex;flex-direction:column;gap:24px;max-width:860px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted)">// 02 · {{ t.expTitle }}</div>
+<h2 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-0.3px">{{ t.expTitle }}</h2>
+<div style="display:flex;flex-direction:column;padding-left:20px;border-left:2px solid var(--border)">
+<sc-for list="{{ experiences }}" as="job" hint-placeholder-count="4">
+<div style="position:relative;padding:0 0 32px 20px">
+<span style="position:absolute;left:-31px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent-accent);box-shadow:0 0 0 4px var(--background-background)"></span>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+<div style="font-size:16px;font-weight:700">{{ job.role }} <span style="color:var(--foreground-muted);font-weight:500">· {{ job.company }}</span></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--foreground-muted);white-space:nowrap">{{ job.dates }}</div>
+</div>
+<div style="margin-top:10px;display:flex;flex-direction:column;gap:6px">
+<sc-for list="{{ job.bullets }}" as="bullet" hint-placeholder-count="2">
+<div style="display:flex;gap:8px;font-size:14.5px;line-height:1.6;color:var(--foreground-muted)">
+<span style="color:var(--accent-accent);font-family:'JetBrains Mono',monospace">›</span>
+<span>{{ bullet }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="projects" data-screen-label="Projects" style="padding:20px 72px 60px;display:flex;flex-direction:column;gap:24px;max-width:1080px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--foreground-muted)">// 03 · {{ t.projTitle }}</div>
+<h2 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-0.3px">{{ t.projTitle }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ projects }}" as="proj" hint-placeholder-count="3">
+<div style="border:1px solid var(--border);border-radius:12px;padding:22px;background:var(--surface-surface);display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--foreground-muted)">~/projects/{{ proj.id }}</div>
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+<div style="font-size:17px;font-weight:700">{{ proj.name }}</div>
+<span style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--accent-accent-soft-foreground);background:var(--accent-accent-soft);padding:3px 8px;border-radius:6px;white-space:nowrap">{{ proj.tag }}</span>
+</div>
+<p style="margin:0;font-size:14px;line-height:1.65;color:var(--foreground-muted);flex:1">{{ proj.desc }}</p>
+<a href="{{ proj.url }}" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600">$ open →</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<footer style="padding:28px 72px 48px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--foreground-muted)">{{ t.footerNote }}</div>
+<div style="display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px">
+<a href="https://github.com/Jeniphan" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/jetniphan-pukkham-a6831842a" target="_blank">LinkedIn</a>
+<a href="uploads/current_resume-1787632409979-sv4o.pdf" download="Jetniphan-Pukkham-Resume.pdf">{{ t.resumeLink }}</a>
+</div>
+</footer>
+</main>
+
+<sc-if value="{{ showPalette }}" hint-placeholder-val="{{ true }}">
+<button onClick="{{ togglePalette }}" style="position:fixed;bottom:24px;right:24px;display:flex;align-items:center;gap:8px;background:var(--surface-surface);border:1px solid var(--border);border-radius:999px;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--foreground-muted);box-shadow:0 4px 16px rgba(0,0,0,0.5);cursor:pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<span>{{ t.paletteHint }}</span>
+<span style="border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:10px">⌘K</span>
+</button>
+<sc-if value="{{ paletteOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ togglePalette }}" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:flex-start;justify-content:center;padding-top:14vh;z-index:50">
+<div onClick="{{ stopClick }}" style="width:520px;max-width:90vw;background:var(--surface-surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden">
+<div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border)">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--foreground-muted)"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<input value="{{ query }}" onChange="{{ setQuery }}" placeholder="{{ t.paletteHint }}" autoFocus="{{ true }}" style="flex:1;background:transparent;border:none;outline:none;color:var(--foreground);font-family:'JetBrains Mono',monospace;font-size:14px"></input>
+</div>
+<div style="max-height:300px;overflow-y:auto;padding:8px">
+<sc-for list="{{ paletteResults }}" as="proj" hint-placeholder-count="3">
+<div onClick="{{ proj.click }}" style="padding:12px 12px;border-radius:8px;cursor:pointer;display:flex;flex-direction:column;gap:2px">
+<div style="font-weight:600;font-size:14px">{{ proj.name }}</div>
+<div style="font-size:12px;color:var(--foreground-muted)">{{ proj.desc }}</div>
+</div>
+</sc-for>
+<sc-if value="{{ paletteEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="padding:16px;font-size:13px;color:var(--foreground-muted)">{{ t.paletteEmpty }}</div>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;defaultLanguage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'th'&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;th&quot;],&quot;section&quot;:&quot;Content&quot;},&quot;showContributionGraph&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showCommandPalette&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = {
+    lang: this.props.defaultLanguage === 'th' ? 'th' : 'en',
+    activeSection: 'about',
+    typedLen: 0,
+    copiedEmail: false,
+    paletteOpen: false,
+    query: '',
+  };
+
+  EXPERIENCE = [
+    { id: 'axons', company: 'AXONS', role: 'Full Stack Developer', dates: 'Aug 2023 – Present', bullets: {
+      en: [
+        'Build and maintain internal platform services in Go and NestJS on a microservice architecture, integrating over AWS SQS and WebSocket for real-time and asynchronous workloads.',
+        'Design PostgreSQL and MySQL schemas and the Next.js interfaces on top of them, taking features from spec to release.',
+        'Introduced Redis and BullMQ for queued background jobs, moving long-running work off the request path.',
+      ],
+      th: [
+        'พัฒนาและดูแลบริการแพลตฟอร์มภายในองค์กรด้วย Go และ NestJS บนสถาปัตยกรรม microservice เชื่อมต่อผ่าน AWS SQS และ WebSocket สำหรับงานแบบ real-time และ asynchronous',
+        'ออกแบบ schema ของ PostgreSQL และ MySQL พร้อมหน้าบ้านด้วย Next.js ดูแลฟีเจอร์ตั้งแต่ spec จนถึง release',
+        'นำ Redis และ BullMQ มาใช้จัดคิวงานเบื้องหลัง ลดภาระงานที่ใช้เวลานานออกจาก request path',
+      ],
+    }},
+    { id: 'logicton', company: 'Logicton Co., Ltd.', role: 'Full Stack Developer', dates: 'Sep 2022 – Present', bullets: {
+      en: [
+        'Deliver logistics tooling across an ASP.NET Core/C# backend and NestJS + Fastify services, with Vue.js front ends on SQL Server.',
+        'Own feature delivery end to end, including deployment via Dokploy and Vercel.',
+      ],
+      th: [
+        'พัฒนาเครื่องมือด้านโลจิสติกส์บน backend ASP.NET Core/C# ร่วมกับบริการ NestJS + Fastify และหน้าบ้านด้วย Vue.js บน SQL Server',
+        'ดูแลการส่งมอบฟีเจอร์แบบครบวงจร รวมถึงการ deploy ผ่าน Dokploy และ Vercel',
+      ],
+    }},
+    { id: 'karnkanok', company: 'Karnkanok Property', role: 'Front-End Developer', dates: 'Jun 2022 – Sep 2022', bullets: {
+      en: ['Designed and built internal web tools in Angular with HTML/SCSS for the property sales team.'],
+      th: ['ออกแบบและพัฒนาเครื่องมือเว็บภายในองค์กรด้วย Angular, HTML และ SCSS ให้ทีมขายอสังหาริมทรัพย์'],
+    }},
+    { id: 'toyota', company: 'Toyota Tsusho Denso Electronics (Thailand)', role: 'Software Engineer Intern', dates: 'Jun 2021 – Nov 2021', bullets: {
+      en: ['Built factory-floor desktop tooling with Electron, Angular, NestJS, and MySQL.'],
+      th: ['พัฒนาเครื่องมือเดสก์ท็อปสำหรับหน้างานโรงงานด้วย Electron, Angular, NestJS และ MySQL'],
+    }},
+  ];
+
+  PROJECTS = [
+    { id: 'tunderpos', name: 'TunderPOS', tag: 'tunderpos.com', url: 'https://tunderpos.com', desc: {
+      en: 'Point-of-sale platform for restaurants, cafés, and grocery stores — online ordering, LINE LIFF membership, stock control, and staff management. Full owner of architecture, delivery, and hosting.',
+      th: 'แพลตฟอร์ม POS สำหรับร้านอาหาร คาเฟ่ และร้านขายของชำ ครอบคลุมสั่งอาหารออนไลน์ ระบบสมาชิกผ่าน LINE LIFF ควบคุมสต็อก และจัดการพนักงาน ดูแลเองทั้งสถาปัตยกรรม การพัฒนา และ hosting',
+    }},
+    { id: 'tundercoach', name: 'TunderCoach AI', tag: 'LINE', url: 'https://lin.ee/TiFdzC9', desc: {
+      en: 'AI running coach that generates individual training plans toward a goal, reviews each session and weekly progress, and adapts the plan. Integrated with Strava.',
+      th: 'โค้ชวิ่งด้วย AI ที่สร้างแผนฝึกซ้อมเฉพาะบุคคลตามเป้าหมาย รีวิวผลแต่ละเซสชันและความคืบหน้ารายสัปดาห์ พร้อมปรับแผนอัตโนมัติ เชื่อมต่อกับ Strava',
+    }},
+    { id: 'babybeat', name: 'BabyBeat', tag: 'LINE', url: 'https://lin.ee/qyQfwrk', desc: {
+      en: 'Newborn-care assistant bot that logs feeding, sleep, and diaper events and turns them into a summary parents can bring to a paediatrician.',
+      th: 'บอทผู้ช่วยดูแลทารกแรกเกิด บันทึกการให้นม การนอน และการเปลี่ยนผ้าอ้อม แล้วสรุปออกมาให้พ่อแม่นำไปพบกุมารแพทย์ได้ง่ายขึ้น',
+    }},
+  ];
+
+  I18N = {
+    en: {
+      location: 'Chiang Mai, Thailand',
+      sectionsLabel: 'sections',
+      heroPrompt: '$ whoami',
+      tagline: "Full-stack engineer shipping enterprise platforms by day, building products of my own by night.",
+      aboutTitle: 'About',
+      aboutParagraph: 'Full-stack engineer with 4+ years building production systems across agriculture, logistics, and property tech — from Go and NestJS microservices to Next.js and Angular front ends. Comfortable owning a feature end to end: data model, queue-driven background work, API, UI, and deployment. Currently shipping enterprise tooling at AXONS while running three products of my own in the wild.',
+      contribTitle: '$ git log --stat --since=1y',
+      contribCaption: 'Placeholder — connect live GitHub contribution data.',
+      expTitle: 'Experience',
+      projTitle: 'Projects',
+      resumeCmd: 'resume.pdf',
+      resumeLink: 'Résumé',
+      footerNote: 'Built with Next.js · static export for GitHub Pages',
+      paletteHint: 'Search projects',
+      paletteEmpty: 'No projects match',
+      copiedLabel: 'copied to clipboard',
+    },
+    th: {
+      location: 'เชียงใหม่ ประเทศไทย',
+      sectionsLabel: 'หมวดหมู่',
+      heroPrompt: '$ whoami',
+      tagline: 'วิศวกร Full-Stack ที่ดูแลระบบระดับองค์กรในเวลางาน และสร้างโปรดักต์ของตัวเองในเวลาว่าง',
+      aboutTitle: 'เกี่ยวกับ',
+      aboutParagraph: 'วิศวกร Full-Stack ที่มีประสบการณ์กว่า 4 ปีในการสร้างระบบที่ใช้งานจริงในหลายอุตสาหกรรม ทั้งเกษตร โลจิสติกส์ และอสังหาริมทรัพย์ — ตั้งแต่ microservices ด้วย Go และ NestJS ไปจนถึงหน้าบ้านด้วย Next.js และ Angular ถนัดดูแลฟีเจอร์แบบครบวงจร ตั้งแต่ data model งานเบื้องหลังแบบ queue-driven, API, UI ไปจนถึงการ deploy ปัจจุบันดูแลระบบระดับองค์กรที่ AXONS พร้อมกับพัฒนาโปรดักต์ของตัวเองอีก 3 ตัวควบคู่กันไป',
+      contribTitle: '$ git log --stat --since=1y',
+      contribCaption: 'ตัวอย่าง — เชื่อมข้อมูล GitHub contribution จริงในอนาคต',
+      expTitle: 'ประสบการณ์',
+      projTitle: 'โปรเจกต์',
+      resumeCmd: 'resume.pdf',
+      resumeLink: 'เรซูเม่',
+      footerNote: 'สร้างด้วย Next.js · static export สำหรับ GitHub Pages',
+      paletteHint: 'ค้นหาโปรเจกต์',
+      paletteEmpty: 'ไม่พบโปรเจกต์ที่ตรงกัน',
+      copiedLabel: 'คัดลอกแล้ว',
+    },
+  };
+
+  componentDidMount() {
+    this._startTyping();
+    this._onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        this.togglePalette();
+      } else if (e.key === 'Escape' && this.state.paletteOpen) {
+        this.setState({ paletteOpen: false });
+      }
+    };
+    window.addEventListener('keydown', this._onKey);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._typeInterval);
+    window.removeEventListener('keydown', this._onKey);
+  }
+
+  _startTyping() {
+    clearInterval(this._typeInterval);
+    this.setState({ typedLen: 0 });
+    const full = this.I18N[this.state.lang].tagline;
+    this._typeInterval = setInterval(() => {
+      this.setState((s) => {
+        if (s.typedLen >= full.length) {
+          clearInterval(this._typeInterval);
+          return null;
+        }
+        return { typedLen: s.typedLen + 1 };
+      });
+    }, 26);
+  }
+
+  setLang = (lang) => {
+    this.setState({ lang }, () => this._startTyping());
+  };
+
+  scrollToSection = (id) => {
+    this.setState({ activeSection: id });
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 24;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
+
+  copyEmail = () => {
+    navigator.clipboard.writeText('jeni.pukkham@gmail.com').then(() => {
+      this.setState({ copiedEmail: true });
+      setTimeout(() => this.setState({ copiedEmail: false }), 1500);
+    }).catch(() => {});
+  };
+
+  togglePalette = () => this.setState((s) => ({ paletteOpen: !s.paletteOpen, query: '' }));
+  stopClick = (e) => e.stopPropagation();
+  setQuery = (e) => this.setState({ query: e.target.value });
+  openProject = (url) => {
+    window.open(url, '_blank');
+    this.setState({ paletteOpen: false });
+  };
+
+  _contribCells() {
+    const cells = [];
+    const colors = ['var(--border)', 'rgba(4,133,247,0.22)', 'rgba(4,133,247,0.42)', 'rgba(4,133,247,0.68)', 'var(--accent-accent)'];
+    for (let i = 0; i < 140; i++) {
+      const frac = Math.abs(Math.sin(i * 12.9898)) % 1;
+      const level = Math.floor(frac * 5);
+      cells.push({ bg: colors[level] });
+    }
+    return cells;
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this.I18N[lang];
+    const experiences = this.EXPERIENCE.map((e) => ({ ...e, bullets: e.bullets[lang] }));
+    const projects = this.PROJECTS.map((p) => ({ ...p, desc: p.desc[lang] }));
+    const q = this.state.query.trim().toLowerCase();
+    const paletteResults = this.PROJECTS
+      .filter((p) => p.name.toLowerCase().includes(q))
+      .map((p) => ({ ...p, desc: p.desc[lang], click: () => this.openProject(p.url) }));
+
+    const navDefs = [
+      { id: 'about', label: 'about.tsx', connector: '├─' },
+      { id: 'experience', label: 'experience.tsx', connector: '├─' },
+      { id: 'projects', label: 'projects.tsx', connector: '└─' },
+    ];
+    const navItems = navDefs.map((n) => {
+      const active = this.state.activeSection === n.id;
+      return {
+        ...n,
+        click: () => this.scrollToSection(n.id),
+        style: `display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;background:${active ? 'var(--accent-accent-soft)' : 'transparent'};color:${active ? 'var(--accent-accent-soft-foreground)' : 'var(--foreground-muted)'}`,
+      };
+    });
+
+    const btnBase = "border:none;flex:1;padding:6px 0;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;cursor:pointer";
+    const langEnStyle = `${btnBase};background:${lang === 'en' ? 'var(--accent-accent)' : 'transparent'};color:${lang === 'en' ? '#fff' : 'var(--foreground-muted)'}`;
+    const langThStyle = `${btnBase};background:${lang === 'th' ? 'var(--accent-accent)' : 'transparent'};color:${lang === 'th' ? '#fff' : 'var(--foreground-muted)'}`;
+
+    return {
+      t,
+      typedText: t.tagline.slice(0, this.state.typedLen),
+      experiences,
+      projects,
+      navItems,
+      langEnStyle,
+      langThStyle,
+      setLangEn: () => this.setLang('en'),
+      setLangTh: () => this.setLang('th'),
+      emailLabel: this.state.copiedEmail ? t.copiedLabel : 'jeni.pukkham@gmail.com',
+      copyEmail: this.copyEmail,
+      paletteOpen: this.state.paletteOpen,
+      togglePalette: this.togglePalette,
+      stopClick: this.stopClick,
+      query: this.state.query,
+      setQuery: this.setQuery,
+      paletteResults,
+      paletteEmpty: paletteResults.length === 0 && q.length > 0,
+      contribCells: this._contribCells(),
+      showContrib: this.props.showContributionGraph ?? true,
+      showPalette: this.props.showCommandPalette ?? true,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
