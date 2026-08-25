@@ -23,3 +23,23 @@ The design medium is **HTML/CSS/JS** — these are prototypes, not production co
 - `README.md` — this file
 - `chats/` — conversation transcripts (read these!)
 - `project/` — the `Resume ใหม่ Canva` project files (HTML prototypes, assets, components)
+
+## Implementation
+
+The portfolio prototype (`project/Portfolio - Jetniphan Pukkham.dc.html`) has been implemented
+as a real Next.js app (App Router, static export) at the repo root — see `src/app` and
+`src/components/Portfolio.tsx`. The resume PDF and headshot photo were carried over from
+`project/uploads/` and the prototype's `.image-slots.state.json` into `public/`.
+
+```
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export to ./out
+```
+
+Deploying `out/` to GitHub Pages:
+- **User/org page** (`username.github.io`): no changes needed.
+- **Project page** (`username.github.io/repo-name`): set `basePath`/`assetPrefix` in
+  `next.config.mjs` to `/repo-name` before building.
+
+The `Resume - Jetniphan Pukkham.dc.html` prototype has not been implemented yet.
