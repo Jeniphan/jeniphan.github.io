@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { contribCellLevels } from '@/lib/data';
 
 const LEVEL_COLORS = [
@@ -8,13 +11,54 @@ const LEVEL_COLORS = [
   'var(--accent-accent)',
 ];
 
+const CELL_COUNT = 140;
+const GITHUB_USERNAME = 'Jeniphan';
+const CACHE_KEY = `gh-contrib-${GITHUB_USERNAME}`;
+const CACHE_TTL_MS = 60 * 60 * 1000;
+
+interface ContributionDay {
+  date: string;
+  level: number;
+}
+
+async function fetchContributionLevels(): Promise<number[]> {
+  const cached = sessionStorage.getItem(CACHE_KEY);
+  if (cached) {
+    const { levels, fetchedAt } = JSON.parse(cached) as { levels: number[]; fetchedAt: number };
+    if (Date.now() - fetchedAt < CACHE_TTL_MS) return levels;
+  }
+
+  const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`);
+  if (!res.ok) throw new Error(`GitHub contributions request failed: ${res.status}`);
+  const data = (await res.json()) as { contributions: ContributionDay[] };
+  const levels = data.contributions.slice(-CELL_COUNT).map((day) => day.level);
+
+  sessionStorage.setItem(CACHE_KEY, JSON.stringify({ levels, fetchedAt: Date.now() }));
+  return levels;
+}
+
 interface ContributionGraphProps {
   title: string;
   caption: string;
 }
 
 export default function ContributionGraph({ title, caption }: ContributionGraphProps) {
-  const levels = contribCellLevels(140);
+  const [levels, setLevels] = useState<number[]>(() => contribCellLevels(CELL_COUNT));
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchContributionLevels()
+      .then((live) => {
+        if (!cancelled && live.length === CELL_COUNT) setLevels(live);
+      })
+      .catch(() => {
+        // Keep the placeholder pattern if the live fetch fails.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <div
       style={{
