@@ -39,7 +39,7 @@ export const EXPERIENCE: Job[] = [
     id: 'logicton',
     company: 'Logicton Co., Ltd.',
     role: 'Full Stack Developer',
-    dates: 'Sep 2022 – Present',
+    dates: 'Sep 2022 – Aug 2023',
     bullets: {
       en: [
         'Deliver logistics tooling across an ASP.NET Core/C# backend and NestJS + Fastify services, with Vue.js front ends on SQL Server.',
