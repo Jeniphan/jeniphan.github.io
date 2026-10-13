@@ -1,0 +1,29 @@
+.github/workflows/deploy.yml
+  s_1a2af00df0200d::t_fa5c986c118a85 7-8
+.gitignore
+  s_1a2af00df0200d::t_9c504be8c642f5 7
+package.json
+  s_1a2af00df0200d::t_b3a6da72a790f0 6,8
+scripts/fetch-contributions.mjs
+  s_1a2af00df0200d::t_e7283e554bdf5c 1-57
+src/components/ContributionGraph.tsx
+  s_1a2af00df0200d::t_865f4ad684a402 15,18,26-28
+src/lib/data.ts
+  s_1a2af00df0200d::t_8484683f43f753 201,227
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.3",
+  "base_commit_sha": "96290665938b2305a6cdb713133c7586d6e3d922",
+  "prompts": {},
+  "sessions": {
+    "s_1a2af00df0200d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "40f1eaf8-6b2e-4310-9425-c8160d047ec2",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "akiira <jeni8399@gmail.com>"
+    }
+  }
+}
