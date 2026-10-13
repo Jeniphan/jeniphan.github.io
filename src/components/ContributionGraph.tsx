@@ -11,24 +11,48 @@ const LEVEL_COLORS = [
   'var(--accent-accent)',
 ];
 
-const CELL_COUNT = 140;
-const CACHE_KEY = 'contrib-levels';
+const WEEKS = 53;
+const CACHE_KEY = 'contrib-days';
 const CACHE_TTL_MS = 60 * 60 * 1000;
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const ROW_LABELS: Record<number, string> = { 1: 'M', 3: 'W', 5: 'F' }; // Sunday-first rows
+const mono = "'JetBrains Mono', monospace";
+
+interface Day {
+  date: string;
+  count: number;
+  level: number;
+}
 
 // Generated at build time by scripts/fetch-contributions.mjs (GitLab + GitHub merged).
-async function fetchContributionLevels(): Promise<number[]> {
+async function fetchDays(): Promise<Day[]> {
   const cached = sessionStorage.getItem(CACHE_KEY);
   if (cached) {
-    const { levels, fetchedAt } = JSON.parse(cached) as { levels: number[]; fetchedAt: number };
-    if (Date.now() - fetchedAt < CACHE_TTL_MS) return levels;
+    const { days, fetchedAt } = JSON.parse(cached) as { days: Day[]; fetchedAt: number };
+    if (Date.now() - fetchedAt < CACHE_TTL_MS) return days;
   }
 
   const res = await fetch('/contributions.json');
   if (!res.ok) throw new Error(`contributions request failed: ${res.status}`);
-  const { levels } = (await res.json()) as { levels: number[] };
+  const { days } = (await res.json()) as { days: Day[] };
 
-  sessionStorage.setItem(CACHE_KEY, JSON.stringify({ levels, fetchedAt: Date.now() }));
-  return levels;
+  sessionStorage.setItem(CACHE_KEY, JSON.stringify({ days, fetchedAt: Date.now() }));
+  return days;
+}
+
+// One label per month, placed on the first column whose first day falls in that month.
+function monthLabels(days: Day[]): { col: number; label: string }[] {
+  const labels: { col: number; label: string }[] = [];
+  let last = -1;
+  for (let col = 0; col * 7 < days.length; col++) {
+    const month = Number(days[col * 7].date.slice(5, 7)) - 1;
+    if (month !== last) {
+      // Skip a label that would crowd the previous one at the left edge.
+      if (!(col === 0 && days[0].date.slice(8, 10) > '20')) labels.push({ col, label: MONTHS[month] });
+      last = month;
+    }
+  }
+  return labels;
 }
 
 interface ContributionGraphProps {
@@ -37,21 +61,26 @@ interface ContributionGraphProps {
 }
 
 export default function ContributionGraph({ title, caption }: ContributionGraphProps) {
-  const [levels, setLevels] = useState<number[]>(() => contribCellLevels(CELL_COUNT));
+  const [days, setDays] = useState<Day[] | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    fetchContributionLevels()
+    fetchDays()
       .then((live) => {
-        if (!cancelled && live.length === CELL_COUNT) setLevels(live);
+        if (!cancelled && live.length) setDays(live);
       })
       .catch(() => {
-        // Keep the placeholder pattern if the live fetch fails.
+        // Keep the placeholder pattern if the data file is missing.
       });
     return () => {
       cancelled = true;
     };
   }, []);
+
+  // Placeholder is date-free so server and client render identically.
+  const placeholder = days ? null : contribCellLevels(WEEKS * 7);
+  const cellCount = days ? days.length : WEEKS * 7;
+  const labels = days ? monthLabels(days) : [];
 
   return (
     <div
@@ -62,18 +91,87 @@ export default function ContributionGraph({ title, caption }: ContributionGraphP
         background: 'var(--surface-surface)',
       }}
     >
-      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11.5, color: 'var(--foreground-muted)', marginBottom: 14 }}>
-        {title}
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(20, 1fr)', gap: 3, maxWidth: 420 }}>
-        {levels.map((level, i) => (
+      <div style={{ fontFamily: mono, fontSize: 11.5, color: 'var(--foreground-muted)', marginBottom: 14 }}>{title}</div>
+
+      <div style={{ overflowX: 'auto' }}>
+        <div style={{ minWidth: 620, display: 'grid', gridTemplateColumns: '14px 1fr', columnGap: 8 }}>
+          <div />
           <div
-            key={i}
-            style={{ width: '100%', aspectRatio: '1', borderRadius: 2, background: LEVEL_COLORS[level] }}
-          />
-        ))}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: `repeat(${WEEKS}, 1fr)`,
+              columnGap: 3,
+              height: 16,
+              fontSize: 11,
+              color: 'var(--foreground-muted)',
+            }}
+          >
+            {labels.map(({ col, label }) => (
+              <span key={col} style={{ gridColumn: `${col + 1} / span 3`, whiteSpace: 'nowrap' }}>
+                {label}
+              </span>
+            ))}
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateRows: 'repeat(7, 1fr)',
+              rowGap: 3,
+              fontSize: 11,
+              color: 'var(--foreground-muted)',
+              alignItems: 'center',
+            }}
+          >
+            {Array.from({ length: 7 }, (_, row) => (
+              <span key={row}>{ROW_LABELS[row] ?? ''}</span>
+            ))}
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateRows: 'repeat(7, auto)',
+              gridTemplateColumns: `repeat(${WEEKS}, 1fr)`,
+              gridAutoFlow: 'column',
+              gap: 3,
+            }}
+          >
+            {Array.from({ length: cellCount }, (_, i) => {
+              const day = days?.[i];
+              const level = day ? day.level : placeholder![i];
+              return (
+                <div
+                  key={i}
+                  title={day ? `${day.count} contributions on ${day.date}` : undefined}
+                  style={{ width: '100%', aspectRatio: '1', borderRadius: 2, background: LEVEL_COLORS[level] }}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
-      <div style={{ marginTop: 12, fontSize: 11, color: 'var(--foreground-muted)' }}>{caption}</div>
+
+      <div
+        style={{
+          marginTop: 14,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 8,
+          fontSize: 11,
+          color: 'var(--foreground-muted)',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+          <span style={{ marginRight: 4 }}>Less</span>
+          {LEVEL_COLORS.map((color, i) => (
+            <div key={i} style={{ width: 11, height: 11, borderRadius: 2, background: color }} />
+          ))}
+          <span style={{ marginLeft: 4 }}>More</span>
+        </div>
+        <div>{caption}</div>
+      </div>
     </div>
   );
 }

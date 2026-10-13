@@ -6,7 +6,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 
 const GITLAB_USER = 'Jeniphan';
 const GITHUB_USER = 'Jeniphan';
-const DAYS = 140;
+const WEEKS = 53; // columns, Sunday-first, ending with the current week
 const OUT = new URL('../public/contributions.json', import.meta.url);
 
 const iso = (d) => d.toISOString().slice(0, 10);
@@ -44,14 +44,17 @@ if (!sources.length) {
   process.exit(0);
 }
 
-const today = new Date();
-const dates = Array.from({ length: DAYS }, (_, i) => {
-  const d = new Date(today);
-  d.setUTCDate(d.getUTCDate() - (DAYS - 1 - i));
-  return iso(d);
-});
+const now = new Date();
+const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+const start = new Date(today);
+start.setUTCDate(start.getUTCDate() - today.getUTCDay() - (WEEKS - 1) * 7); // Sunday of the first column
+
+const dates = [];
+for (const d = new Date(start); d <= today; d.setUTCDate(d.getUTCDate() + 1)) dates.push(iso(d));
 const counts = dates.map((date) => sources.reduce((sum, s) => sum + (s[date] ?? 0), 0));
+const levels = toLevels(counts);
+const days = dates.map((date, i) => ({ date, count: counts[i], level: levels[i] }));
 
 await mkdir(new URL('.', OUT), { recursive: true });
-await writeFile(OUT, JSON.stringify({ generatedAt: today.toISOString(), levels: toLevels(counts) }));
-console.log(`contributions: ${sources.length}/2 sources, ${counts.filter(Boolean).length}/${DAYS} active days`);
+await writeFile(OUT, JSON.stringify({ generatedAt: now.toISOString(), days }));
+console.log(`contributions: ${sources.length}/2 sources, ${counts.filter(Boolean).length}/${days.length} active days`);
