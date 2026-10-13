@@ -1,0 +1,23 @@
+scripts/fetch-contributions.mjs
+  s_1a2af00df0200d::t_24dcb3e24ee4e9 9,47-53,55-56,59-60
+src/lib/data.ts
+  s_1a2af00df0200d::t_1ab658888bd0aa 201,227
+src/components/ContributionGraph.tsx
+  s_1a2af00df0200d::t_88281b8a52bdec 14-15,17-25,28,31-32,37,39-55,64,68,70,73,80-84,94-115,117-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.3",
+  "base_commit_sha": "c46a97a284c94f8cc62721953dbe47e1326044d4",
+  "prompts": {},
+  "sessions": {
+    "s_1a2af00df0200d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "40f1eaf8-6b2e-4310-9425-c8160d047ec2",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "akiira <jeni8399@gmail.com>"
+    }
+  }
+}
