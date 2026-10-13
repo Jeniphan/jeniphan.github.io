@@ -12,15 +12,10 @@ const LEVEL_COLORS = [
 ];
 
 const CELL_COUNT = 140;
-const GITHUB_USERNAME = 'Jeniphan';
-const CACHE_KEY = `gh-contrib-${GITHUB_USERNAME}`;
+const CACHE_KEY = 'contrib-levels';
 const CACHE_TTL_MS = 60 * 60 * 1000;
 
-interface ContributionDay {
-  date: string;
-  level: number;
-}
-
+// Generated at build time by scripts/fetch-contributions.mjs (GitLab + GitHub merged).
 async function fetchContributionLevels(): Promise<number[]> {
   const cached = sessionStorage.getItem(CACHE_KEY);
   if (cached) {
@@ -28,10 +23,9 @@ async function fetchContributionLevels(): Promise<number[]> {
     if (Date.now() - fetchedAt < CACHE_TTL_MS) return levels;
   }
 
-  const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`);
-  if (!res.ok) throw new Error(`GitHub contributions request failed: ${res.status}`);
-  const data = (await res.json()) as { contributions: ContributionDay[] };
-  const levels = data.contributions.slice(-CELL_COUNT).map((day) => day.level);
+  const res = await fetch('/contributions.json');
+  if (!res.ok) throw new Error(`contributions request failed: ${res.status}`);
+  const { levels } = (await res.json()) as { levels: number[] };
 
   sessionStorage.setItem(CACHE_KEY, JSON.stringify({ levels, fetchedAt: Date.now() }));
   return levels;

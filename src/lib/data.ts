@@ -198,7 +198,7 @@ export const I18N = {
     aboutParagraph:
       'Full-stack engineer with 4+ years building production systems across agriculture, logistics, and property tech — from Go and NestJS microservices to Next.js and Angular front ends. Comfortable owning a feature end to end: data model, queue-driven background work, API, UI, and deployment. Currently shipping enterprise tooling at AXONS while running three products of my own in the wild.',
     contribTitle: '$ git log --stat --since=1y',
-    contribCaption: 'Last 140 days · github.com/Jeniphan',
+    contribCaption: 'Last 140 days · GitHub + GitLab',
     expTitle: 'Experience',
     skillsTitle: 'Skills',
     skillsSubtitle: 'Technical skills',
@@ -224,7 +224,7 @@ export const I18N = {
     aboutParagraph:
       'วิศวกร Full-Stack ที่มีประสบการณ์กว่า 4 ปีในการสร้างระบบที่ใช้งานจริงในหลายอุตสาหกรรม ทั้งเกษตร โลจิสติกส์ และอสังหาริมทรัพย์ — ตั้งแต่ microservices ด้วย Go และ NestJS ไปจนถึงหน้าบ้านด้วย Next.js และ Angular ถนัดดูแลฟีเจอร์แบบครบวงจร ตั้งแต่ data model งานเบื้องหลังแบบ queue-driven, API, UI ไปจนถึงการ deploy ปัจจุบันดูแลระบบระดับองค์กรที่ AXONS พร้อมกับพัฒนาโปรดักต์ของตัวเองอีก 3 ตัวควบคู่กันไป',
     contribTitle: '$ git log --stat --since=1y',
-    contribCaption: '140 วันล่าสุด · github.com/Jeniphan',
+    contribCaption: '140 วันล่าสุด · GitHub + GitLab',
     expTitle: 'ประสบการณ์',
     skillsTitle: 'ทักษะ',
     skillsSubtitle: 'ทักษะด้านเทคนิค',
